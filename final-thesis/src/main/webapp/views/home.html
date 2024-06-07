@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://kit.fontawesome.com/f0b4d212f8.js"
+	crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/0dc3600b72.js"
+	crossorigin="anonymous"></script>
+
+<link rel="stylesheet"
+	th:href="@{/resources/vendors/css/bootstrap.min.css}" />
+<script th:src="@{/resources/vendors/js/bootstrap.bundle.min.js}"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+<link rel="stylesheet" type="text/css"
+	th:href="@{resources/css/home.css}">
+
+
+<link rel="apple-touch-icon" sizes="180x180"
+	th:href="@{/resources//vendors/favicon/android-chrome-192x192.png}">
+<link rel="apple-touch-icon" sizes="180x180"
+	th:href="@{/resources/vendors/favicon/android-chrome-512x512.png}">
+<link rel="apple-touch-icon" sizes="180x180"
+	th:href="@{/resources/vendors/favicon/apple-touch-icon.png}">
+<link rel="icon" type="image/png" sizes="32x32"
+	th:href="@{/resources/vendors/favicon/favicon-32x32.png}">
+<link rel="icon" type="image/png" sizes="16x16"
+	th:href="@{/resources/vendors/favicon/favicon-16x16.png}">
+<link rel="manifest"
+	th:href="@{resources/vendors/favicon/site.webmanifest}">
+
+<title>Electronic Engineering Department</title>
+</head>
+<body>
+	<!-- EC-LOGO -->
+	<div th:replace="~{fragments/ec-logo :: #ec-logo}"></div>
+	<!-- CUSTOM MENU -->
+	<div th:replace="~{fragments/menu-bar :: #custom-menu}"></div>
+
+	<div class="my-4 container-xxl px-5">
+		<!-- DEPARTMENT IMAGE -->
+		<img src="resources/img/ec.png" class="img-fluid"
+			alt="Electronic Engineering Department">
+
+
+		<!-- WELCOME TO EC -->
+		<div class="row  ec-depart">
+			<div class="col-7 mt-5">
+				<h3 class="text-center">Welcome to Electronic Engineering
+					Department</h3>
+				<p class="px-4 pt-3 about-para">Our department is a hub of
+					innovation and excellence, committed to preparing future engineers
+					and technologists to shape the evolving world of electronics and
+					communication systems.</p>
+				<p class="px-4 about-para">Our department offers comprehensive
+					undergraduate and postgraduate programs designed to provide a solid
+					foundation in both theoretical knowledge and practical skills. Our
+					curriculum covers a wide range of topics, including Digital and
+					Analog</p>
+				<a th:href="@{/department-info}" class="btn-rectangular mx-4">Read
+					More &rarr;</a>
+			</div>
+			<div class="col-5">
+				<img th:src="@{resources/img/npt-4.png}"
+					class="diagonal-border-radius"
+					alt="Electronic Engineering Department" />
+			</div>
+		</div>
+	</div>
+	<!-- VISION & MISSION -->
+	<div id="vision-mission" class="custom-background">
+		<div class="container-xl custom-container mt-5">
+			<div class="row">
+				<div class="col-md-12">
+					<h2>Our Vision &amp; Mission</h2>
+				</div>
+				<div class="col-md-6 custom-column">
+					<p>To be a global leader in innovative solutions that empower
+						businesses and enrich communities.</p>
+					<p>To deliver exceptional products and services that exceed our
+						customers' expectations through innovation, quality, and
+						sustainability.</p>
+				</div>
+				<div class="col-md-6 custom-image">
+					<img src="vision-mission.jpg" alt="Vision and Mission">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- TEACHERS INFORMATION -->
+	<div id="professors" class="my-4 container-xxl px-5">
+		<div class="row mb-4">
+			<h2 class="text-center mb-4">Our Professors</h2>
+			<div class="col-5">
+				<img th:src="@{resources/img/npt-4.png}"
+					class="diagonal-border-radius"
+					alt="Electronic Engineering Department" />
+			</div>
+			<div class="col-7">
+				<p class="about-para">To deliver exceptional products and
+					services that exceed our customers' expectations through
+					innovation, quality, and sustainability.</p>
+			</div>
+		</div>
+		<div class="row mt-5">
+			<div class="col-4  ">
+				<p class="about-para">Dr. Maung Aye and Daw Hnin Ngwe Yee Pwint
+					serve as Associate Professors in the Electronics Department at MTU
+					With their wealth of experience and commitment to academic
+					excellence, they play a pivotal role in shaping the future of our
+					students and contributing to the advancement of our department.</p>
+				<div class="row mb-4">
+					<div class="col-12 text-left">
+						<a th:href="@{/teachers}" class="btn btn-secondary">More
+							Teachers</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-8">
+				<div class="row">
+					<div class="col-6 teacher">
+						<img th:src="@{resources/img/npt-4.png}"
+							class="diagonal-border-radius"
+							alt="Electronic Engineering Department" />
+						<h2 th:text="'Dr. Maung Aye'"></h2>
+						<p th:text="'Associate Professor'"></p>
+					</div>
+					<div class="col-6 teacher">
+						<img th:src="@{resources/img/npt-4.png}"
+							class="diagonal-border-radius"
+							alt="Electronic Engineering Department" />
+						<h2 th:text="'Daw Hnin Ngwe Yee Pwint'"></h2>
+						<p th:text="'Associate Professor'"></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- STUDENT INFORMATION -->
+	
+</body>
+</html>

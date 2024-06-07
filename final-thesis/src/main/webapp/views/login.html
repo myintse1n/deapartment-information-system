@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Login Page</title>
+<script src="https://kit.fontawesome.com/f0b4d212f8.js" crossorigin="anonymous"></script>
+	
+<link rel="stylesheet" th:href="@{/resources/vendors/css/bootstrap.min.css}" />
+<link rel="stylesheet" type="text/css" href="resources/css/home.css">
+<link rel="stylesheet" href="resources/css/style.css">
+<script th:src="@{/resources/vendors/js/bootstrap.bundle.min.js}"></script>
+
+
+</head>
+<body>
+
+	<div th:replace="~{fragments/ec-logo :: #ec-logo}"></div>
+     
+     <form th:action="@{/authentication}" method="post" class="w-50 login-container mt-5">
+        <h4 class="mb-4 ">Log In</h4>
+         <div class="mb-3"> 
+            <label class="form-label">Username</label>
+            <input type="text" name="username" class="form-control" />
+        </div>
+        <div class="mb-3"> 
+            <label class="form-label">Password</label>
+            <input type="password" name="password" class="form-control" />
+        </div>
+        <div class="mb-3 form-check">
+            <input type="checkbox" name="remember-me" id="rememberMe" class="form-check-input" />
+            <label for="rememberMe" class="form-check-label">Remember Me</label>                
+        </div>
+        <div class="d-grid">
+            <button type="submit" class="btn btn-primary">Login</button>
+        </div>
+        <div class="mt-3 text-center">
+            <a th:href="@{/signup}">Create an Account</a>
+        </div>
+    </form>
+    <footer class="mt-5">
+			<div class="row">
+				<div class="col span_1_of_2">
+					<ul class="footer-nav">
+						<li><a href="#">About Us</a></li>
+						<li><a href="#">Blog</a></li>
+						<li><a href="#">Help and Support</a></li>
+						<li><a href="#">iOS App</a></li>
+						<li><a href="#">Android App</a></li>
+					</ul>
+				</div>
+				<div class="col span_1_of_2">
+					<ul class="social-links">
+						<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+						<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+						<li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+						<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="row">
+				<p>This webpage has been created for educational purposes by Nahid Akhter and Juan Galvan.<br>
+					You can feel free to use it and customize it to make your own webpages </p>
+			</div>
+		</footer>
+</body>
+</html>

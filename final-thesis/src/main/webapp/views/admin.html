@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" >
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://kit.fontawesome.com/f0b4d212f8.js" crossorigin="anonymous"></script>
+
+	
+<link rel="stylesheet" th:href="@{/resources/vendors/css/bootstrap.min.css}" />
+<script th:src="@{/resources/vendors/js/bootstrap.bundle.min.js}"></script>
+
+	<link rel="stylesheet" type="text/css" href="resources/css/home.css">
+
+
+	<link rel="apple-touch-icon" sizes="180x180" href="vendors/favicon/android-chrome-192x192.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="vendors/favicon/android-chrome-512x512.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="vendors/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="vendors/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="vendors/favicon/favicon-16x16.png">
+	<link rel="manifest" href="resources/vendors/favicon/site.webmanifest">
+
+	<title>Electronic Engineering Department</title>
+</head>
+<body>
+	<div class="container-fluid mt-4">
+
+		<nav>
+			<img src="resources/img/ec-logo.png" alt="Electronic Engineering Department" class="ec-logo">
+			<div class="header d-inline-block ms-4 mt-3">ELECTRONIC ENGINEERING DEPARTMENT</div>
+			<ul class="main-nav">
+					<li><a href="Login.html">Login</a></li>
+					<li><a href="#contact">Create Account</a></li>
+					<li><a href="#about">About</a></li>
+			</ul>
+		</nav>
+		
+		<div class="mt-4 ec-department container-fluid">	
+			<img src="resources/img/ec.png" class="img-fluid" alt="Electronic Engineering Department">
+		</div>
+
+
+		<section class="about-section js--about-section" id="about">
+			<div class="row">
+				<div class="col-6 about-box js--about-box">
+					<h2 class="about-heading">Welcome To Electrical Engineering Deapartment</h2>
+					<p class="about-para">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. </p>
+					<p class="about-para">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. </p>
+					<a href="#" class="btn btn-ghost">Read More</a>
+				</div>
+				<div class="col-6 about-box js--about-box">
+					<img src="resources/img/npt-4.png" alt="Digisolve app on Laptop" class="laptop-image">
+				</div>
+			</div>
+		</section>
+
+		<section class="work-section">
+			<div class="row">
+				<h2 class="section-heading">Activities in EC d</h2>
+			</div>
+			<ul class="work-portfolio clearfix">
+				<li>
+					<figure class="portfolio-image">
+						<img src="resources/img/npt-1.png" alt="Online Advertising Image">
+						<p class="work-para">Online Advertising</p>
+					</figure>
+				</li>
+				<li>
+					<figure class="portfolio-image">
+						<img src="resources/img/npt-4.png" alt="Social Media Campaign">
+						<p class="work-para">Social Media Campaign</p>
+					</figure>
+				</li>
+				<li>
+					<figure class="portfolio-image">
+					<img src="resources/img/ux-design.png" alt="UX Desig">
+					<p class="work-para">UX Design</p>
+					</figure>
+				</li>
+				<li>
+					<figure class="portfolio-image">
+						<img src="resources/img/branding-digital-marketing.png" alt="Branding & Digital Marketing">
+						<p class="work-para">Branding and Digital Marketing</p>
+					</figure>
+				</li>
+			</ul>
+		</section>
+
+			
+		<section class="contact-section js--contact" id="contact">
+			<div class="row">
+				<h2 class="contact-heading">We're happy to hear from you</h2>
+			</div>
+			<div class="row">
+				<form method="post" action="#" class="contact-form">
+					<div class="row">
+						<div class="col span_1_of_3 contact-label">
+							<label for="name">Name</label>
+						</div>
+						<div class="col span_2_of_3">
+							<input type="text" name="name" id="name" placeholder="Your Name" required>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col span_1_of_3 contact-label">
+							<label for="email">Email</label>
+						</div>
+						<div class="col span_2_of_3">
+							<input type="email" name="email" id="email" placeholder="Your email" required>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col span_1_of_3 contact-label">
+							<label for="newsletter">Newsletter?</label>
+						</div>
+						<div class="col span_2_of_3">
+							<input type="checkbox" name="newsletter" id="newsletter" checked>&nbsp;Yes, Please
+						</div>
+					</div>
+					<div class="row">
+						<div class="col span_1_of_3 contact-label">
+							<label for="message">Drop us a line</label>
+						</div>
+						<div class="col span_2_of_3">
+							<textarea name="message" id="message" placeholder="Your message"></textarea>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col span_1_of_3">
+							&nbsp;
+						</div>
+						<div class="col span_2_of_3">
+							<input type="submit" value="Send it!">
+						</div>
+					</div>
+
+				</form>
+			</div>
+		</section>
+
+		<footer>
+			<div class="row">
+				<div class="col span_1_of_2">
+					<ul class="footer-nav">
+						<li><a href="#">About Us</a></li>
+						<li><a href="#">Blog</a></li>
+						<li><a href="#">Help and Support</a></li>
+						<li><a href="#">iOS App</a></li>
+						<li><a href="#">Android App</a></li>
+					</ul>
+				</div>
+				<div class="col span_1_of_2">
+					<ul class="social-links">
+						<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+						<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+						<li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+						<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="row">
+				<p>This webpage has been created for educational purposes by Nahid Akhter and Juan Galvan.<br>
+					You can feel free to use it and customize it to make your own webpages </p>
+			</div>
+		</footer>
+
+	</div>
+</body>
+</html>

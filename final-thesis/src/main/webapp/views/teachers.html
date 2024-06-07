@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" >
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://kit.fontawesome.com/f0b4d212f8.js"
+	crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet"
+	th:href="@{/resources/vendors/css/bootstrap.min.css}" />
+<script th:src="@{/resources/vendors/js/bootstrap.bundle.min.js}"></script>
+
+<link rel="stylesheet" type="text/css" th:href="@{resources/css/home.css}">
+
+<link rel="apple-touch-icon" sizes="180x180"
+	th:href="@{/resources//vendors/favicon/android-chrome-192x192.png}">
+<link rel="apple-touch-icon" sizes="180x180"
+	th:href="@{/resources/vendors/favicon/android-chrome-512x512.png}">
+<link rel="apple-touch-icon" sizes="180x180"
+	th:href="@{/resources/vendors/favicon/apple-touch-icon.png}">
+<link rel="icon" type="image/png" sizes="32x32"
+	th:href="@{/resources/vendors/favicon/favicon-32x32.png}">
+<link rel="icon" type="image/png" sizes="16x16"
+	th:href="@{/resources/vendors/favicon/favicon-16x16.png}">
+<link rel="manifest"
+	th:href="@{resources/vendors/favicon/site.webmanifest}">
+
+
+<title>Teachers At EC Department</title>
+</head>
+<body>
+	<div class="container" id="teacher-lists">
+		<div class="row">
+			<div th:each="teache, iterStat : ${teacherList}" th:with="index=${iterStat.index}" class="col-md-4">
+				<div class="teacher">
+					<img th:src="@{${teache.image}}" alt="Teacher Image">
+					<h2 th:text="${teache.name}"></h2>
+					<p th:text="${teache.position}"></p>
+				</div>
+				<th:block th:if="${index % 3 == 2}"></th:block>
+			</div>
+		</div>
+
+	</div>
+</body>
+</html>

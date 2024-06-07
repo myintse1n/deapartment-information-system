@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+
+<link rel="stylesheet"
+	th:href="@{/resources/vendors/css/bootstrap.min.css}" />
+<link rel="stylesheet" type="text/css"
+	th:href="@{resources/css/home.css}">
+<script th:src="@{/resources/vendors/js/bootstrap.bundle.min.js}"></script>
+<title>Department Information</title>
+</head>
+<body>
+	<!-- EC-LOGO -->
+	<div th:replace="~{fragments/ec-logo :: #ec-logo}"></div>
+	<!-- CUSTOM MENU -->
+	<div th:replace="~{fragments/menu-bar :: #custom-menu}"></div>
+	<div class="my-4 container-xxl px-5">
+		<h3 class="text-center">Welcome to Electronic Engineering
+			Department</h3>
+		<p class="about-para">Our department is a hub of innovation and
+			excellence, committed to preparing future engineers and technologists
+			to shape the evolving world of electronics and communication systems.</p>
+		<p class="about-para">Our department offers comprehensive
+			undergraduate and postgraduate programs designed to provide a solid
+			foundation in both theoretical knowledge and practical skills. Our
+			curriculum covers a wide range of topics, including Digital and
+			Analog Electronics, Microprocessor and Microcontroller Systems,
+			Communication Systems, Signal Processing, Embedded Systems, VLSI
+			Design, and Control Systems. Our aim is to equip you with the
+			expertise needed to excel in diverse career paths within the
+			electronics industry.</p>
+		<div class="row">
+			<div class="col-8">
+				<p class="about-para">Laboratories and Facilities:</p>
+				<p class="about-para">The department boasts state-of-the-art
+					laboratories that are essential for hands-on learning and research.
+					These include: Electronics Lab Microprocessor and Microcontroller
+					Lab Communication Lab Digital Signal Processing Lab VLSI
+				<p class="about-para">Lab Research and Innovation:</p>
+				<p class="about-para">Design The Electronics Department at MTU
+					is actively involved in research activities. Faculty and students
+					work on cutting-edge projects that contribute to advancements in
+					electronics and communication technologies. Research areas include
+					wireless communication, digital signal processing, and
+					semiconductor technology.</p>
+				<p class="about-para">Industry Collaboration:</p>
+				<p class="about-para">The department maintains strong ties with
+					the industry to ensure that the education provided is relevant to
+					current technological trends. Collaboration with industry partners
+					includes internships, joint research projects, and guest lectures
+					from industry experts.</p>
+				<p class="about-para">Student Activities:</p>
+				<p class="about-para">Students in the Electronics Department are
+					encouraged to participate in various extracurricular activities,
+					including technical clubs, competitions, and seminars. These
+					activities provide opportunities for practical learning,
+					networking, and professional development.</p>
+			</div>
+			<div class="col-4"></div>
+		</div>
+	</div>
+</body>
+</html>

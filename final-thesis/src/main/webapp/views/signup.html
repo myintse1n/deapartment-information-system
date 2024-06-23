@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Login Page</title>
+<script src="https://kit.fontawesome.com/f0b4d212f8.js" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/0dc3600b72.js"
+	crossorigin="anonymous"></script>
+
+<link rel="stylesheet" th:href="@{/resources/vendors/css/bootstrap.min.css}" />
+<link rel="stylesheet" type="text/css" href="resources/css/home.css">
+<link rel="stylesheet" href="resources/css/style.css">
+<script th:src="@{/resources/vendors/js/bootstrap.bundle.min.js}"></script>
+
+
+</head>
+<body>
+
+	 <div th:replace="~{fragments/ec-logo :: #ec-logo}"></div>
+     <div th:replace="~{fragments/menu-bar :: #custom-menu}"></div>
+     <main>
+		
+		<form th:action="@{/signup}" th:object="${form}" method="post" class=" w-50 login-container mt-5">
+			 <h4 class="mb-4 ">Sign Up</h4>
+			<div class="mb-3">
+				<label class="form-label">Student Name</label>		
+				<input type="text" th:field="*{name}" placeholder="Enter Student Name" class="form-control" />	
+				<span class="text-danger" th:errors="*{name}"></span>	
+			</div>
+
+			<div class="mb-3">
+				<label class="form-label">Email</label>		
+				<input type="email" th:field="*{email}" placeholder="Enter Email" class="form-control" />		
+				<span class="text-danger" th:errors="*{email}"></span>	
+			</div>
+			
+			<div class="mb-3">
+				<label class="form-label">Password</label>		
+				<input type="password" th:field="*{password}" placeholder="Enter Password" class="form-control" />		
+				<span class="text-danger" th:errors="*{password}"></span>	
+			</div>
+			
+			<div>
+				<button class="btn btn-primary" type="submit">Sign Up</button>
+			</div>
+		</form>
+		
+	</main>
+
+</body>
+</html>

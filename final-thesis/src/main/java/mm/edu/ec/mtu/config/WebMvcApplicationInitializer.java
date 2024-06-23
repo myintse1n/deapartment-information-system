@@ -13,7 +13,9 @@ public class WebMvcApplicationInitializer extends AbstractAnnotationConfigDispat
 	protected Class<?>[] getServletConfigClasses() {
 		return new Class[] {
 			WebMvcConfig.class,
-			DatabaseConfig.class
+			DatabaseConfig.class,
+			WebSecurityConfig.class,
+			WebSecurityAuthenticationProvider.class
 		};
 	}
 

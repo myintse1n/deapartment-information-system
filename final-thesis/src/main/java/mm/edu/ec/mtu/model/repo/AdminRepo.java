@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.support.JpaRepositoryImplementati
 
 import mm.edu.ec.mtu.model.entity.Admin;
 
-public interface AdminRepo extends JpaRepositoryImplementation<Admin, Integer>{
-	
+public interface AdminRepo extends JpaRepositoryImplementation<Admin, String>{
+
 }

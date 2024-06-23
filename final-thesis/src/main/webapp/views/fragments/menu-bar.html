@@ -3,35 +3,59 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script src="https://kit.fontawesome.com/0dc3600b72.js"
-	crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/0dc3600b72.js" crossorigin="anonymous"></script>
 </head>
 <body>
-	<!-- Custom Menu Bar -->
-	<div id="custom-menu" class="custom-menu-bar mb-3">
-	  <div class="custom-left-menu">
-	      <a href="#">Home</a>
-	      <!-- Custom Department dropdown -->
-	      <div class="custom-dropdown">
-	        <button class="custom-dropbtn">Department <i class="fa-solid fa-angle-down"></i></button>
-	        <div class="custom-dropdown-content">
-	          <a href="#vision-mission">Vision &amp; Missions</a>
-	          <a href="#professors">Our Professors</a>
-	          <a href="/theses">Thesis Title by Academic Year</a>
-	          <a href="#">Student Feedback</a>
-	      </div>
-	  </div>
-	  <a href="#">Admissions</a>
-	  <a href="#">News &amp; Events</a>
-	  <a href="#">Contact Us</a>
-	
-	  </div>
-	  <!-- Custom Right-side menu items -->
-	  <div class="custom-right-menu">
-	    <a href="#">Login</a>
-	    <a href="#">Create Account</a>
-	    <a href="#">About</a>
-	  </div>
-	</div>
+    <!-- Custom Menu Bar -->
+    <div id="custom-menu" class="custom-menu-bar mb-3">
+      <div class="custom-left-menu">
+          <a th:href="@{/}">Home</a>
+          <!-- Custom Department dropdown -->
+          <div class="custom-dropdown">
+            <button class="custom-dropbtn">Department <i class="fa-solid fa-angle-down"></i></button>
+            <div class="custom-dropdown-content">
+              <a href="#vision-mission" class="nav-link" data-href="/">Vision &amp; Missions</a>
+              <a href="#professors" class="nav-link" data-href="/">Our Professors</a>
+              <a href="/theses" class="nav-link">Thesis Title by Academic Year</a>
+              <a href="#" class="nav-link">Student Feedback</a>
+            </div>
+          </div>
+          <a href="#" class="nav-link">Admissions</a>
+          <a href="#" class="nav-link">News &amp; Events</a>
+          <a href="#" class="nav-link">Contact Us</a>
+      </div>
+      <!-- Custom Right-side menu items -->
+      <div class="custom-right-menu">
+        <a th:href="@{/login}" class="nav-link">Login</a>
+        <a th:href="@{/signup}" class="nav-link">Create Account</a>
+        <a href="#" class="nav-link">About</a>
+      </div>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                const href = e.currentTarget.getAttribute('href');
+                if (href && href.includes('#')) {
+                    e.preventDefault();
+                    const targetHref = e.currentTarget.getAttribute('data-href') || '/';
+                    const hash = href.split('#')[1];
+                    const currentPath = window.location.pathname;
+                    
+                    if (currentPath !== targetHref) {
+                        // Navigate to the homepage with the hash
+                        window.location.href = `${targetHref}#${hash}`;
+                    } else {
+                        // Scroll to the section on the current page
+                        document.getElementById(hash).scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+    });
+</script>
 </body>
 </html>

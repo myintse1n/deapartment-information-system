@@ -1,21 +1,30 @@
-/home/msseeker/Documents/Final Year Thesis/final-thesis/src/main/java/mm/edu/ec/mtu/controller/HomeController.java
-/home/msseeker/Documents/Final Year Thesis/final-thesis/src/main/java/mm/edu/ec/mtu/controller/StaffController.java
-/home/msseeker/Documents/Final Year Thesis/final-thesis/src/main/java/mm/edu/ec/mtu/config/WebMvcConfig.java
-/home/msseeker/Documents/Final Year Thesis/final-thesis/src/main/java/mm/edu/ec/mtu/config/WebSecurityConfig.java
-/home/msseeker/Documents/Final Year Thesis/final-thesis/src/main/java/mm/edu/ec/mtu/model/repo/AcademicYearRepo.java
-/home/msseeker/Documents/Final Year Thesis/final-thesis/src/main/java/mm/edu/ec/mtu/model/entity/Staff.java
-/home/msseeker/Documents/Final Year Thesis/final-thesis/src/main/java/mm/edu/ec/mtu/config/WebMvcApplicationInitializer.java
-/home/msseeker/Documents/Final Year Thesis/final-thesis/src/main/java/mm/edu/ec/mtu/model/service/ThesisService.java
-/home/msseeker/Documents/Final Year Thesis/final-thesis/src/main/java/mm/edu/ec/mtu/model/entity/Student.java
-/home/msseeker/Documents/Final Year Thesis/final-thesis/src/main/java/mm/edu/ec/mtu/model/repo/AdminRepo.java
-/home/msseeker/Documents/Final Year Thesis/final-thesis/src/main/java/mm/edu/ec/mtu/controller/StudentController.java
-/home/msseeker/Documents/Final Year Thesis/final-thesis/src/main/java/mm/edu/ec/mtu/model/entity/Admin.java
-/home/msseeker/Documents/Final Year Thesis/final-thesis/src/main/java/mm/edu/ec/mtu/config/DatabaseConfig.java
-/home/msseeker/Documents/Final Year Thesis/final-thesis/src/main/java/mm/edu/ec/mtu/model/entity/Teacher.java
-/home/msseeker/Documents/Final Year Thesis/final-thesis/src/main/java/mm/edu/ec/mtu/model/repo/StudentThesisRepo.java
-/home/msseeker/Documents/Final Year Thesis/final-thesis/src/main/java/mm/edu/ec/mtu/controller/AdminController.java
-/home/msseeker/Documents/Final Year Thesis/final-thesis/src/main/java/mm/edu/ec/mtu/model/entity/StudentThesis.java
-/home/msseeker/Documents/Final Year Thesis/final-thesis/src/main/java/mm/edu/ec/mtu/model/repo/TeacherRepo.java
-/home/msseeker/Documents/Final Year Thesis/final-thesis/src/main/java/mm/edu/ec/mtu/model/entity/AcademicYear.java
-/home/msseeker/Documents/Final Year Thesis/final-thesis/src/main/java/mm/edu/ec/mtu/config/WebSecurityApplicationInitializer.java
-/home/msseeker/Documents/Final Year Thesis/final-thesis/src/main/java/mm/edu/ec/mtu/controller/ThesisController.java
+/home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/controller/HomeController.java
+/home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/model/entity/Staff.java
+/home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/config/DatabaseConfig.java
+/home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/model/service/AdminService.java
+/home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/model/service/security/StudentUserDetailsService.java
+/home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/model/repo/StudentThesisRepo.java
+/home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/model/repo/StudentRepo.java
+/home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/model/entity/StudentThesis.java
+/home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/model/service/dto/StudentSignUpForm.java
+/home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/config/WebSecurityConfig.java
+/home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/config/WebMvcConfig.java
+/home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/controller/StudentController.java
+/home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/model/service/exception/BusinessException.java
+/home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/config/WebSecurityAuthenticationProvider.java
+/home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/model/repo/AcademicYearRepo.java
+/home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/controller/StudetnSignUpController.java
+/home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/model/repo/TeacherRepo.java
+/home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/controller/StaffController.java
+/home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/model/service/StudentService.java
+/home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/model/entity/Teacher.java
+/home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/controller/AdminController.java
+/home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/controller/ThesisController.java
+/home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/model/repo/AdminRepo.java
+/home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/model/service/security/AdminUserDetailsService.java
+/home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/model/service/ThesisService.java
+/home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/model/entity/Admin.java
+/home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/config/WebSecurityApplicationInitializer.java
+/home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/model/entity/Student.java
+/home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/config/WebMvcApplicationInitializer.java
+/home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/model/entity/AcademicYear.java

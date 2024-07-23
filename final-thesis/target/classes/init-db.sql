@@ -1,17 +1,17 @@
 /* Teacher */
-insert into teacher(name, position,image) values ('Dr. Tin Tin Hla','Professor','/resources/img/teacher/ms.jpg');
-insert into teacher(name, position,image) values ('Dr. Maung Aye','Associate Professor','/resources/img/teacher/ms.jpg');
-insert into teacher(name, position,image) values ('Daw  Hnin Ngwe Yee Pwint','Associate Professor','/resources/img/teacher/ms.jpg');
-insert into teacher(name, position,image) values ('Dr. May Su Hlaing','Lecturer','/resources/img/teacher/ms.jpg');
-insert into teacher(name, position,image) values ('Daw Khaing Zar Zar Myint','Lecturer','/resources/img/teacher/ms.jpg');
-insert into teacher(name, position,image) values ('Daw Zin Mar','Lecturer','/resources/img/teacher/ms.jpg');
-insert into teacher(name, position,image) values ('Daw Wai Wai Moe Myint','Lecturer','/resources/img/teacher/ms.jpg');
-insert into teacher(name, position,image) values ('Daw Tin Tin Wai','Lecturer','/resources/img/teacher/ms.jpg');
-insert into teacher(name, position,image) values ('Daw May Su Kyi','Associate Lecturer','/resources/img/teacher/ms.jpg');
-insert into teacher(name, position,image) values ('Daw Thandar Aung','Associate Lecturer','/resources/img/teacher/ms.jpg');
-insert into teacher(name, position,image) values ('U Kyaw San Shein','Coach','/resources/img/teacher/ms.jpg');
-insert into teacher(name, position,image) values ('Daw Su Myat Hlaing','Coach','/resources/img/teacher/ms.jpg');
-insert into teacher(name, position,image) values ('Daw Khaing Yee Mon','Coach','/resources/img/teacher/ms.jpg');
+insert into teacher(name, position,email,phone,education) values ('Dr. Tin Tin Hla','Professor','teacher1@gmail.com','09-444-583-385','Ph.D');
+insert into teacher(name, position,email,phone,education) values ('Dr. Maung Aye','Associate Professor','teacher2@gmail.com','09-444-583-385','Ph.D');
+insert into teacher(name, position,email,phone,education) values ('Daw  Hnin Ngwe Yee Pwint','Associate Professor','teacher3@gmail.com','09-444-583-385','Ph.D');
+insert into teacher(name, position,email,phone,education) values ('Dr. May Su Hlaing','Lecturer','teacher4@gmail.com','09-444-583-385','Ph.D');
+insert into teacher(name, position,email,phone,education) values ('Daw Khaing Zar Zar Myint','Lecturer','teacher5@gmail.com','09-444-583-385','Ph.D');
+insert into teacher(name, position,email,phone,education) values ('Daw Zin Mar','Lecturer','teacher6@gmail.com','09-444-583-385','Ph.D');
+insert into teacher(name, position,email,phone,education) values ('Daw Wai Wai Moe Myint','Lecturer','teacher7@gmail.com','09-444-583-385','Ph.D');
+insert into teacher(name, position,email,phone,education) values ('Daw Tin Tin Wai','Lecturer','teacher8@gmail.com','09-444-583-385','Ph.D');
+insert into teacher(name, position,email,phone,education) values ('Daw May Su Kyi','Associate Lecturer','teacher9@gmail.com','09-444-583-385','Ph.D');
+insert into teacher(name, position,email,phone,education) values ('Daw Thandar Aung','Associate Lecturer','teacher10@gmail.com','09-444-583-385','Ph.D');
+insert into teacher(name, position,email,phone,education) values ('U Kyaw San Shein','Coach','teacher11@gmail.com','09-444-583-385','Ph.D');
+insert into teacher(name, position,email,phone,education) values ('Daw Su Myat Hlaing','Coach','teacher12@gmail.com','09-444-583-385','Ph.D');
+insert into teacher(name, position,email,phone,education) values ('Daw Khaing Yee Mon','Coach','teacher13@gmail.com','09-444-583-385','Ph.D');
 
 
 INSERT INTO academic_year (year) VALUES ('2018-2019')

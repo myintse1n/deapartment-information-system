@@ -13,8 +13,6 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.context.HttpSessionSecurityContextRepository;
 import org.springframework.security.web.context.SecurityContextRepository;
 
-import mm.edu.ec.mtu.model.entity.Admin.Role;
-
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig {
@@ -25,16 +23,6 @@ public class WebSecurityConfig {
 	@Autowired
 	private AuthenticationProvider getStudetnAuthenticationProvider;
 
-	@Bean
-	SecurityFilterChain homeFilter(HttpSecurity http) throws Exception {
-		
-		http.securityMatcher("/").authorizeHttpRequests(request->{
-			request.anyRequest().permitAll();
-		});
-		
-		return http.build();
-	}
-	
 	@Bean
 	SecurityFilterChain resourcesFilter(HttpSecurity http) throws Exception {
 		
@@ -49,7 +37,8 @@ public class WebSecurityConfig {
 	SecurityFilterChain httpFilter(HttpSecurity http) throws Exception {
 		http.authorizeHttpRequests(request->{
 			request.requestMatchers("/login","/signup").permitAll();
-			request.requestMatchers("/**").hasAnyAuthority(Role.Admin.name(),Role.Student.name());
+			request.requestMatchers("/**").hasAnyAuthority("Admin","Student");
+			request.requestMatchers("/teachers/**").hasAnyAuthority("Admin","Student");
 		});
 		http.formLogin(form->form.loginPage("/login"));
 		http.logout(form->form.logoutSuccessUrl("/"));

@@ -30,6 +30,18 @@
 	th:href="@{resources/vendors/favicon/site.webmanifest}">
 
 
+<style>
+.teacher-search {
+	display: flex;
+}
+
+.form-search {
+	display: flex;
+	
+	margin-right: 32px;
+}
+</style>
+
 <title>Teachers At EC Department</title>
 </head>
 <body>
@@ -39,19 +51,48 @@
 	<div th:replace="~{fragments/menu-bar :: #custom-menu}"></div>
 
 	<div class="my-4 container-xxl px-5">
-		<div th:each="teache :${teacherList}" class="teacher">
-			<h2 th:text="${teache.name}">Teacher 1</h2>
 
-			<p th:text="${teache.position}"></p>
+		<h3>Electronic Engineering Department Teachers</h3>
 
-			<p>
-				<strong>Hometown:</strong> City A
-			</p>
-			<p>
-				<strong>Bachelor Degree:</strong> B.Sc. in Computer Science
-			</p>co
+		<div class="my-4 teacher-search column-gap-3">
+			<a th:href="@{/teachers/edit}" class="btn btn-primary">Add
+				Teacher</a> <a th:href="@{/teachers/edit}" class="btn btn-danger">Remove
+				Teacher</a>
+
+			<form class="form-search column-gap-2">
+				<input class="form-control mr-sm-2" type="search" name="keyword"
+					placeholder="Search" aria-label="Search">
+				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+			</form>
 		</div>
+		<table class="table table-striped mt-4">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Name</th>
+					<th>Position</th>
+					<th>Email</th>
+					<th>Phone No</th>
+					<th>Education</th>
+					<th>Image</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="teache : ${teacherList}" th:object="${teache}">
+					<td th:text="*{id}"></td>
+					<td><a th:href="@{/teachers/edit(id=*{id})}"
+						class="text-decoration-none" th:text="*{name}"></a></td>
+					<td th:text="*{position}"></td>
+					<td th:text="*{email}"></td>
+					<td th:text="*{phone}"></td>
+					<td th:text="*{education}"></td>
+					<td th:text="*{image}"></td>
+				</tr>
+			</tbody>
+		</table>
 
 	</div>
+
+
 </body>
 </html>

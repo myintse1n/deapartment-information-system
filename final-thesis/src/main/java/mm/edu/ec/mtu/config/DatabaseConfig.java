@@ -8,6 +8,7 @@ import org.apache.commons.dbcp2.BasicDataSource;
 import org.hibernate.jpa.HibernatePersistenceProvider;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
@@ -44,6 +45,14 @@ public class DatabaseConfig {
 	@Bean
 	JpaTransactionManager transactionManager(EntityManagerFactory entityManagerFactory) {
 		return new JpaTransactionManager(entityManagerFactory);
+	}
+	
+	@Bean
+	ReloadableResourceBundleMessageSource messageSource() {
+		var bean  = new ReloadableResourceBundleMessageSource();
+		bean.setBasename("classpath:messages");
+		bean.setDefaultEncoding("UTF-8");
+		return bean;
 	}
 	
 	private Properties jpaProperties() throws Exception {

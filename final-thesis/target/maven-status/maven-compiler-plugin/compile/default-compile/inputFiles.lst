@@ -1,4 +1,6 @@
+/home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/controller/TeacherController.java
 /home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/controller/HomeController.java
+/home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/model/service/TeacherService.java
 /home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/model/entity/Staff.java
 /home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/config/DatabaseConfig.java
 /home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/model/service/AdminService.java

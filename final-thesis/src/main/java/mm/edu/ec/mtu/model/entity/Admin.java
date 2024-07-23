@@ -2,8 +2,6 @@ package mm.edu.ec.mtu.model.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Data;
@@ -18,8 +16,7 @@ public class Admin {
 	private String name;
 	@Column(nullable = false)
 	private String password;
-	@Enumerated(EnumType.STRING)
-	private Role role=Role.Admin;
+	private String role=Role.Admin.name();
 	
 	public enum Role{
 		Admin,Student
@@ -27,6 +24,6 @@ public class Admin {
 	
 	public Admin() {
 		if(this.role==null)
-			this.role=Role.Admin;
+			this.role=Role.Admin.name();
 	}
 }

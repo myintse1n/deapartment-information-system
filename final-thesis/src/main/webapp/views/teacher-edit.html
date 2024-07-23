@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Edit Teacher</title>
+
+<link rel="stylesheet"
+	th:href="@{/resources/vendors/css/bootstrap.min.css}" />
+<script th:src="@{/resources/vendors/js/bootstrap.bundle.min.js}"></script>
+
+<link rel="stylesheet" type="text/css"
+	th:href="@{resources/css/home.css}">
+
+</head>
+<body>
+	<div class="my-4 container-xxl px-5">
+
+		<h4 th:text="${teacher.id == 0 ? 'Add' : 'Edit'} + ' Teacher'"></h4>
+
+		<div class="card mt-4 w-75">
+			<div class="card-header">
+				<div class="card-title p-2" th:text="#{teacher.edit.title}"></div>
+			</div>
+			<div class="card-body">
+
+				<form th:action="@{/teachers}" th:object="${teacher}"
+					method="post">
+					
+					<input type="hidden" name="id" th:field="*{id}" />
+
+					<div class="row mt-3">
+						<div class="col">
+							<label class="form-label" for="name">Teacher name</label> <input
+								type="text" class="form-control" id="name" name="name" th:field="*{name}" />
+							<div th:if="${#fields.hasErrors('name')}" class="text-danger"
+								th:text="#{teacher.name.notBlank}">title Error</div>
+						</div>
+						<div class="col">
+							<label class="form-label" for="position">Teacher position</label>
+							<input type="text" class="form-control" id="position" th:field="*{position}"
+								name="position" />
+							<div th:if="${#fields.hasErrors('position')}" class="text-danger"
+								th:text="#{teacher.position.notBlank}">title Error</div>
+						</div>
+						<div class="col">
+							<label class="form-label" for="education">Education</label> <input
+								type="text" class="form-control" id="education" name="education" th:field="*{education}" />
+							<div th:if="${#fields.hasErrors('education')}" class="text-danger"
+								th:text="#{teacher.education.notBlank}">title Error</div>
+						</div>
+					</div>
+
+					<div class="row mt-3">
+						<div class="col">
+							<label class="form-label" for="email">Email</label> <input
+								type="email" class="form-control" id="email" name="email" th:field="*{email}" />
+							<div th:if="${#fields.hasErrors('email')}" class="text-danger"
+								th:text="#{teacher.email.notValid}">title Error</div>
+						</div>
+						<div class="col">
+							<label class="form-label" for="phone">Phone</label> <input
+								type="text" class="form-control" id="phone" name="phone" th:field="*{phone}" />
+							<div th:if="${#fields.hasErrors('phone')}" class="text-danger"
+								th:text="#{teacher.phone.notBlank}">title Error</div>
+						</div>
+					</div>
+
+					<button type="submit" class="btn btn-primary mt-3">Save</button>
+
+				</form>
+
+			</div>
+		</div>
+
+	</div>
+</body>
+</html>

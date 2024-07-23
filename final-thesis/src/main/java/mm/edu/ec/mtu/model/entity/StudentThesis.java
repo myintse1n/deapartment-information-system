@@ -22,9 +22,12 @@ public class StudentThesis implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int studentId;
+	
 	@Column(nullable = false,name = "roll_no")
 	private int rollNo;
+	
     private String name;
+    
     @Column(name = "thesis_title")
     private String thesisTitle;
 

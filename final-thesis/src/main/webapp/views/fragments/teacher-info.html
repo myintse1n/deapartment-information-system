@@ -5,23 +5,28 @@
 <title>Insert title here</title>
 </head>
 <body>
-	
-	  <div class="container" id="teacher-lists">
-        <div class="row">
-            <div th:each="teacher, iterStat : ${teacherList}" th:if="${iterStat.index < 3}" class="col-md-4">
-                <div class="teacher">
-                    <img th:src="@{${teacher.image}}" alt="Teacher Image">
-                    <h2 th:text="${teacher.name}"></h2>
-                    <p th:text="${teacher.position}"></p>
-                </div>
-            </div>
-        </div>
-        <div class="row mb-4">
-            <div class="col-12 text-center">
-                <a th:href="@{/teachers}" class="btn btn-secondary">More Teachers</a>
-            </div>
-        </div>
-    </div>
+
+	<div class="container" id="teacher-lists">
+		<div class="row">
+			<div th:each="teacher, iterStat : ${teacherList}"
+				th:if="${iterStat.index < 3}" class="col-md-4">
+				<div class="teacher">
+					<img th:src="@{${teacher.image}}" alt="Teacher Image">
+					<h2 th:text="${teacher.name}"></h2>
+					<p th:text="${teacher.position}"></p>
+				</div>
+			</div>
+		</div>
+		<div class="row mb-4">
+			<div class="col-12 text-center">
+				<a th:href="@{/teachers}" class="btn btn-secondary">More
+					Teachers</a>
+			</div>
+		</div>
+	</div>
+	<div class="container mt-4">
+		teacher
+	</div>
 
 </body>
 </html>

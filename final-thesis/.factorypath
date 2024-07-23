@@ -43,6 +43,7 @@
     <factorypathentry kind="VARJAR" id="M2_REPO/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/com/mysql/mysql-connector-j/8.3.0/mysql-connector-j-8.3.0.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/commons-io/commons-io/2.11.0/commons-io-2.11.0.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/projectlombok/lombok/1.18.32/lombok-1.18.32.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/springframework/security/spring-security-web/6.2.3/spring-security-web-6.2.3.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/springframework/security/spring-security-core/6.2.3/spring-security-core-6.2.3.jar" enabled="true" runInBatchMode="false"/>

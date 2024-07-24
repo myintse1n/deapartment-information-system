@@ -1,5 +1,7 @@
 package mm.edu.ec.mtu.model.entity;
 
+import java.io.Serializable;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -9,7 +11,8 @@ import lombok.Data;
 @Entity
 @Data
 @Table(name = "admin")
-public class Admin {
+public class Admin implements Serializable {
+	private static final long serialVersionUID = 1L;
 	@Id
 	private String email;
 	@Column(nullable = false)

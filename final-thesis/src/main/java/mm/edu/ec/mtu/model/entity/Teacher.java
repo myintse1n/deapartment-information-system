@@ -1,10 +1,15 @@
 package mm.edu.ec.mtu.model.entity;
 
+import java.io.Serializable;
+import java.util.List;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -14,7 +19,9 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "teacher")
-public class Teacher {
+public class Teacher implements Serializable{
+
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -42,5 +49,8 @@ public class Teacher {
 	@NotBlank(message = "{teacher.education.notBlank}")
 	@Column(nullable = false)
 	private String education;
+	
+	@OneToMany(mappedBy = "teacher", cascade = CascadeType.ALL)
+	private List<Subject> subjects;
 
 }

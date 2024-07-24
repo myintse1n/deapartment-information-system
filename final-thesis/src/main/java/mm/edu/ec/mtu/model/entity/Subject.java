@@ -6,6 +6,8 @@ import java.util.List;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
@@ -13,27 +15,31 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Data;
 
-@Entity
 @Data
-@Table(name = "student")
-public class Student implements Serializable{
+@Entity
+@Table(name = "subject")
+public class Subject implements Serializable {
 	private static final long serialVersionUID = 1L;
-
-	@Id
-	private String email;
 	
-	@Column(nullable = false)
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+	
+	@Column(nullable = false, unique = true)
 	private String name;
 	
-	@Column(nullable = false)
-	private String password;
+	@Column(nullable = false, unique = true)
+	private String code;
 	
-	@ManyToMany(mappedBy = "students", cascade = CascadeType.ALL)
-	private List<Subject> subject;
+	@ManyToMany
+	private List<Student> students;
 	
 	@ManyToOne
-	private StudentYear studentYear;
+	private Teacher teacher;
 	
-	@OneToMany(mappedBy = "student",cascade = CascadeType.ALL)
+	@ManyToOne
+	private StudentYear year;
+	
+	@OneToMany(mappedBy = "subject",cascade = CascadeType.ALL)
 	private List<Feedback> feedbacks;
 }

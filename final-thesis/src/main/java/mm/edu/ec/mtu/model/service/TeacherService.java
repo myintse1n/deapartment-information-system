@@ -26,9 +26,11 @@ public class TeacherService {
 		
 		if(StringUtils.hasLength(keyword)) {
 
+			String pattern = "%" + keyword.toLowerCase() + "%";
+			
 			Specification<Teacher> whichKeyword = (root, query, cb) -> {
-				var teacherName = cb.like(cb.lower(root.get("name")), keyword.toLowerCase().concat("%"));
-				var teacherPosition = cb.like(cb.lower(root.get("position")), keyword.toLowerCase().concat("%"));
+				var teacherName = cb.like(cb.lower(root.get("name")), pattern);
+				var teacherPosition = cb.like(cb.lower(root.get("position")),pattern);
 				var teacherEducation = cb.like(cb.lower(root.get("education")), keyword.toLowerCase().concat("%"));
 
 				return cb.or(teacherName, teacherPosition, teacherEducation);

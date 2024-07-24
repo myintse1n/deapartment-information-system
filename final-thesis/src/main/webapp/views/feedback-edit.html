@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<script src="https://kit.fontawesome.com/f0b4d212f8.js"
+	crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/0dc3600b72.js"
+	crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet"
+	th:href="@{/resources/vendors/css/bootstrap.min.css}" />
+<script th:src="@{/resources/vendors/js/bootstrap.bundle.min.js}"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+<link rel="stylesheet" type="text/css"
+	th:href="@{/resources/css/home.css}">
+
+
+<link rel="apple-touch-icon" sizes="180x180"
+	th:href="@{/resources//vendors/favicon/android-chrome-192x192.png}">
+<link rel="apple-touch-icon" sizes="180x180"
+	th:href="@{/resources/vendors/favicon/android-chrome-512x512.png}">
+<link rel="apple-touch-icon" sizes="180x180"
+	th:href="@{/resources/vendors/favicon/apple-touch-icon.png}">
+<link rel="icon" type="image/png" sizes="32x32"
+	th:href="@{/resources/vendors/favicon/favicon-32x32.png}">
+<link rel="icon" type="image/png" sizes="16x16"
+	th:href="@{/resources/vendors/favicon/favicon-16x16.png}">
+<link rel="manifest"
+	th:href="@{resources/vendors/favicon/site.webmanifest}">
+
+<title>feedback form</title>
+</head>
+<body>
+	<!-- EC-LOGO -->
+	<div th:replace="~{fragments/ec-logo :: #ec-logo}"></div>
+	<!-- CUSTOM MENU -->
+	<div th:replace="~{fragments/menu-bar :: #custom-menu}"></div>
+
+	<div class="my-4 container-xxl px-5">
+		<form action="#">
+
+			<div class="card mt-4 w-50">
+				<div class="card-header">
+					<div class="card-title">Student Evaluation Sheet</div>
+				</div>
+				<div class="card-body">
+
+					<div class="row g-5 align-items-center mb-3">
+
+						<div class="col-3">
+							<label for="name" class="col-form-label">Teacher Name</label>
+						</div>
+						<div class="col-auto">
+							<input type="text" class="form-control"
+								name="name">
+						</div>
+
+					</div>
+					
+					<div class="row g-5 align-items-center mb-3">
+
+						<div class="col-3">
+							<label for="name" class="col-form-label">Student Year</label>
+						</div>
+						<div class="col-auto">
+							<input type="text" class="form-control"
+								name="name">
+						</div>
+
+					</div>
+					
+					<div class="row g-5 align-items-center">
+
+						<div class="col-3">
+							<label for="name" class="col-form-label">Subject</label>
+						</div>
+						<div class="col-auto">
+							<input type="text" class="form-control"
+								name="name">
+						</div>
+					</div>
+					
+					
+					
+					
+				</div>
+			</div>
+		</form>
+	</div>
+
+</body>
+</html>

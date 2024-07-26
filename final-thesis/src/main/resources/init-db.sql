@@ -55,6 +55,9 @@ INSERT INTO student_thesis (roll_no,name, thesis_title, academic_year_id) VALUES
 /*Admin*/
 insert into admin(email,name,password,role) values ('admin@gmail.com','admin','$2a$10$V3LG6EBqcB9OdTGgfS4/pubn13VeQ5gVi6CRS9VLhV2XZpBa1wZFO','Admin');
 
+/* student*/
+ insert into student(email,name,password,role) values ('myintsein@gmail.com','Myint Sein','$2a$10$Sdn4sfg93qVwAWqIbwq8M.kfC1RJ6ztog4IhqxlD6hp7ll7Mdb9EC','Student');
+
 /* student_year */
 insert into student_year(current_year) values ('First Year');
 insert into student_year(current_year) values ('Second Year');

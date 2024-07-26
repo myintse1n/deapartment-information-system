@@ -28,6 +28,8 @@ public class Student implements Serializable{
 	@Column(nullable = false)
 	private String password;
 	
+	private String role;
+	
 	@ManyToMany(mappedBy = "students", cascade = CascadeType.ALL)
 	private List<Subject> subject;
 	

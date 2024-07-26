@@ -52,5 +52,8 @@ public class Teacher implements Serializable{
 	
 	@OneToMany(mappedBy = "teacher", cascade = CascadeType.ALL)
 	private List<Subject> subjects;
+	
+	@OneToMany(mappedBy = "teacher",cascade =CascadeType.ALL )
+	private List<Feedback> feedbacks;
 
 }

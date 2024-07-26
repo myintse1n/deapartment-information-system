@@ -32,6 +32,23 @@
 	th:href="@{resources/vendors/favicon/site.webmanifest}">
 
 <title>feedback form</title>
+
+<style>
+.table thead tr {
+	border-top: none;
+	border-bottom: none;
+}
+
+.table tbody td {
+	border-top: none;
+	border-bottom: none;
+}
+
+.first-header-width {
+	width: 750px;
+}
+</style>
+
 </head>
 <body>
 	<!-- EC-LOGO -->
@@ -42,52 +59,410 @@
 	<div class="my-4 container-xxl px-5">
 		<form action="#">
 
-			<div class="card mt-4 w-50">
-				<div class="card-header">
-					<div class="card-title">Student Evaluation Sheet</div>
-				</div>
-				<div class="card-body">
+		
+			<table class="table mt-4">
+				<thead>
+					<tr>
+						<td><select class="w-50">
+								<option value="1">English</option>
+								<option value="2">Maths</option>
+						</select></td>
+						<td>Daw Khaing Ye Mon</td>
+						<td>Ece-21001</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="form-label question-font">
+							<p class="about-para">
+								1. Does the teacher appear to be well-versed in this subject
+								area?<br> ( ဘာသာရပ်နယ်ပယ်နှင့် ပတ်သတ်၍ ကောင်းစွာ
+								တတ်ကျွမ်းနှံစပ်ပုံပေါ်ပါသလား )
+							</p>
+						</td>
+						<td>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox"
+									id="inlineCheckbox1" value="option1"> <label
+									class="form-check-label" for="inlineCheckbox1">1</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox"
+									id="inlineCheckbox2" value="option2"> <label
+									class="form-check-label" for="inlineCheckbox2">2</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox"
+									id="inlineCheckbox1" value="option1"> <label
+									class="form-check-label" for="inlineCheckbox1">3</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox"
+									id="inlineCheckbox2" value="option2"> <label
+									class="form-check-label" for="inlineCheckbox2">4</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox"
+									id="inlineCheckbox1" value="option1"> <label
+									class="form-check-label" for="inlineCheckbox1">5</label>
+							</div>
 
-					<div class="row g-5 align-items-center mb-3">
 
-						<div class="col-3">
-							<label for="name" class="col-form-label">Teacher Name</label>
-						</div>
-						<div class="col-auto">
-							<input type="text" class="form-control"
-								name="name">
-						</div>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="form-label question-font first-header-width">
+							<p class="about-para">
+								2. Is the teacher enthusiastic in teaching this subject?<br>
+								(ဘာသာရပ်ကိုသင်ပြရာတွင် စိတ်ထက်သန်မှုရှိပါသလား)
+							</p>
+						</td>
+						<td>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox"
+									id="inlineCheckbox1" value="option1"> <label
+									class="form-check-label" for="inlineCheckbox1">1</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox"
+									id="inlineCheckbox2" value="option2"> <label
+									class="form-check-label" for="inlineCheckbox2">2</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox"
+									id="inlineCheckbox1" value="option1"> <label
+									class="form-check-label" for="inlineCheckbox1">3</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox"
+									id="inlineCheckbox2" value="option2"> <label
+									class="form-check-label" for="inlineCheckbox2">4</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox"
+									id="inlineCheckbox1" value="option1"> <label
+									class="form-check-label" for="inlineCheckbox1">5</label>
+							</div>
 
-					</div>
-					
-					<div class="row g-5 align-items-center mb-3">
 
-						<div class="col-3">
-							<label for="name" class="col-form-label">Student Year</label>
-						</div>
-						<div class="col-auto">
-							<input type="text" class="form-control"
-								name="name">
-						</div>
+						</td>
+						<td></td>
+					</tr>
 
-					</div>
-					
-					<div class="row g-5 align-items-center">
+					<tr>
+						<td class="form-label question-font">
+							<p class="about-para">
+								3. Is the teacher well prepared for the class.<br>
+								(စာသင်ကြားရန်ကောင်းမွန်စွာ ပြင်ဆင်လာပါသလား)
+							</p>
+						</td>
+						<td>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox"
+									id="inlineCheckbox1" value="option1"> <label
+									class="form-check-label" for="inlineCheckbox1">1</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox"
+									id="inlineCheckbox2" value="option2"> <label
+									class="form-check-label" for="inlineCheckbox2">2</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox"
+									id="inlineCheckbox1" value="option1"> <label
+									class="form-check-label" for="inlineCheckbox1">3</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox"
+									id="inlineCheckbox2" value="option2"> <label
+									class="form-check-label" for="inlineCheckbox2">4</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox"
+									id="inlineCheckbox1" value="option1"> <label
+									class="form-check-label" for="inlineCheckbox1">5</label>
+							</div>
 
-						<div class="col-3">
-							<label for="name" class="col-form-label">Subject</label>
-						</div>
-						<div class="col-auto">
-							<input type="text" class="form-control"
-								name="name">
-						</div>
-					</div>
-					
-					
-					
-					
-				</div>
-			</div>
+
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="form-label question-font first-header-width">
+							<p class="about-para">
+								4. Does the teacher explain the lessons clearly?<br>
+								(စာသင်ကြားရာတွင် နားလည်အောင် ရှင်းလင်းပြတ်သားစွာ
+								သင်ကြားနိုင်ပါသလား)
+							</p>
+						</td>
+						<td>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox"
+									id="inlineCheckbox1" value="option1"> <label
+									class="form-check-label" for="inlineCheckbox1">1</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox"
+									id="inlineCheckbox2" value="option2"> <label
+									class="form-check-label" for="inlineCheckbox2">2</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox"
+									id="inlineCheckbox1" value="option1"> <label
+									class="form-check-label" for="inlineCheckbox1">3</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox"
+									id="inlineCheckbox2" value="option2"> <label
+									class="form-check-label" for="inlineCheckbox2">4</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox"
+									id="inlineCheckbox1" value="option1"> <label
+									class="form-check-label" for="inlineCheckbox1">5</label>
+							</div>
+
+
+						</td>
+						<td></td>
+					</tr>
+
+					<tr>
+						<td class="form-label question-font"><p class="about-para">
+								5. ﻿﻿﻿Does the teacher provide opportunities to ask for unclear
+								lectures?<br> (မရှင်းလင်းသော၊ နားမလည်သော သင်ခန်းစာများ၊
+								မေးမြန်းဆွေးနွေးရန် လွယ်ကူပါသလား)
+							</p></td>
+						<td>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox"
+									id="inlineCheckbox1" value="option1"> <label
+									class="form-check-label" for="inlineCheckbox1">1</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox"
+									id="inlineCheckbox2" value="option2"> <label
+									class="form-check-label" for="inlineCheckbox2">2</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox"
+									id="inlineCheckbox1" value="option1"> <label
+									class="form-check-label" for="inlineCheckbox1">3</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox"
+									id="inlineCheckbox2" value="option2"> <label
+									class="form-check-label" for="inlineCheckbox2">4</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox"
+									id="inlineCheckbox1" value="option1"> <label
+									class="form-check-label" for="inlineCheckbox1">5</label>
+							</div>
+
+
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="form-label question-font first-header-width">
+							<p class="about-para">
+								6. ﻿﻿﻿Does the teacher provide useful feedback and good advice?<br>
+								(အသုံးဝင်သည့် တုံပြန်မှုနှင့် ကောင်းသော အကြံညဏ် ပေးတတ်ပါသလား )
+							</p>
+						</td>
+						<td>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox"
+									id="inlineCheckbox1" value="option1"> <label
+									class="form-check-label" for="inlineCheckbox1">1</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox"
+									id="inlineCheckbox2" value="option2"> <label
+									class="form-check-label" for="inlineCheckbox2">2</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox"
+									id="inlineCheckbox1" value="option1"> <label
+									class="form-check-label" for="inlineCheckbox1">3</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox"
+									id="inlineCheckbox2" value="option2"> <label
+									class="form-check-label" for="inlineCheckbox2">4</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox"
+									id="inlineCheckbox1" value="option1"> <label
+									class="form-check-label" for="inlineCheckbox1">5</label>
+							</div>
+
+
+						</td>
+						<td></td>
+					</tr>
+
+					<tr>
+						<td class="form-label question-font">
+							<p class="about-para">
+								7. Can the teacher teach this subject effectiely?<br> (
+								ဤဘာသာရပ်ကို ထိရောက်စွာ သင်ကြားနိုင်သော ဆရာ၊ဆရာမတစ်ဦး
+								ဖြစ်ပါသလား)
+							</p>
+						</td>
+						<td>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox"
+									id="inlineCheckbox1" value="option1"> <label
+									class="form-check-label" for="inlineCheckbox1">1</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox"
+									id="inlineCheckbox2" value="option2"> <label
+									class="form-check-label" for="inlineCheckbox2">2</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox"
+									id="inlineCheckbox1" value="option1"> <label
+									class="form-check-label" for="inlineCheckbox1">3</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox"
+									id="inlineCheckbox2" value="option2"> <label
+									class="form-check-label" for="inlineCheckbox2">4</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox"
+									id="inlineCheckbox1" value="option1"> <label
+									class="form-check-label" for="inlineCheckbox1">5</label>
+							</div>
+
+
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="form-label question-font first-header-width">
+							<p class="about-para">
+								8. Does the teacher treat all students fairly?<br>
+								(ကျောင်းသားအားလုံးအပေါ် မျှတစွာ ဆက်ဆံပါသလား)
+							</p>
+						</td>
+						<td>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox"
+									id="inlineCheckbox1" value="option1"> <label
+									class="form-check-label" for="inlineCheckbox1">1</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox"
+									id="inlineCheckbox2" value="option2"> <label
+									class="form-check-label" for="inlineCheckbox2">2</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox"
+									id="inlineCheckbox1" value="option1"> <label
+									class="form-check-label" for="inlineCheckbox1">3</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox"
+									id="inlineCheckbox2" value="option2"> <label
+									class="form-check-label" for="inlineCheckbox2">4</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox"
+									id="inlineCheckbox1" value="option1"> <label
+									class="form-check-label" for="inlineCheckbox1">5</label>
+							</div>
+
+
+						</td>
+						<td></td>
+					</tr>
+
+					<tr>
+						<td class="form-label question-font"><p class="about-para">
+								9. Can the teacher control the class well?<br> (အတန်းကို
+								ကောင်းစွာ ကိုင်တွယ်ထိန်းကျောင်းနိုင်ပါသလား)
+							</p></td>
+						<td>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox"
+									id="inlineCheckbox1" value="option1"> <label
+									class="form-check-label" for="inlineCheckbox1">1</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox"
+									id="inlineCheckbox2" value="option2"> <label
+									class="form-check-label" for="inlineCheckbox2">2</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox"
+									id="inlineCheckbox1" value="option1"> <label
+									class="form-check-label" for="inlineCheckbox1">3</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox"
+									id="inlineCheckbox2" value="option2"> <label
+									class="form-check-label" for="inlineCheckbox2">4</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox"
+									id="inlineCheckbox1" value="option1"> <label
+									class="form-check-label" for="inlineCheckbox1">5</label>
+							</div>
+
+
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="form-label question-font first-header-width">
+							<p class="about-para">
+								10 Does the teacher give the assignment, exercise and make <br>
+								(စာသင်ချိန်တွင် ကျောင်းသားများ ဘာသာရပ်အကြောင်းအစာကို
+								နားလည်ခြင်း၊ လိုက်နာခြင်းရှိမရှိ သိရှိနိုင်ရန် မေးခွန်းပေးခြင်း၊
+								လေ့ကျင့်ပေးခြင်း စသည့် အကဲဖြတ်စစ်ဆေးမှု ဆောင်ရွက်ပါသလား)
+							</p>
+						</td>
+						<td>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox"
+									id="inlineCheckbox1" value="option1"> <label
+									class="form-check-label" for="inlineCheckbox1">1</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox"
+									id="inlineCheckbox2" value="option2"> <label
+									class="form-check-label" for="inlineCheckbox2">2</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox"
+									id="inlineCheckbox1" value="option1"> <label
+									class="form-check-label" for="inlineCheckbox1">3</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox"
+									id="inlineCheckbox2" value="option2"> <label
+									class="form-check-label" for="inlineCheckbox2">4</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox"
+									id="inlineCheckbox1" value="option1"> <label
+									class="form-check-label" for="inlineCheckbox1">5</label>
+							</div>
+
+
+						</td>
+						<td></td>
+					</tr>
+
+
+
+				</tbody>
+			</table>
 		</form>
 	</div>
 

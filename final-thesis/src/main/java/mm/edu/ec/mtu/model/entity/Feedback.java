@@ -23,12 +23,39 @@ public class Feedback implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
+	@Column(nullable = false,name = "question1_grade")
+	private int question1Grade;
 	
-	private String performace;
+	@Column(nullable = false,name = "question2_grade")
+	private int question2Grade;
 	
-	@Column(nullable = false)
-	private int grade;
+	@Column(nullable = false,name = "question3_grade")
+	private int question3Grade;
 	
+	@Column(nullable = false,name = "question4_grade")
+	private int question4Grade;
+	
+	@Column(nullable = false,name = "question5_grade")
+	private int question5Grade;
+	
+	@Column(nullable = false,name = "question6_grade")
+	private int question6Grade;
+	
+	@Column(nullable = false,name = "question7_grade")
+	private int question7Grade;
+	
+	@Column(nullable = false,name = "question8_grade")
+	private int question8Grade;
+	
+	@Column(nullable = false,name = "question9_grade")
+	private int question9Grade;
+	
+	@Column(nullable = false,name = "question10_grade")
+	private int question10Grade;
+	
+	@ManyToOne
+	private Teacher teacher;
+		
 	@ManyToOne
 	private Student student;
 	

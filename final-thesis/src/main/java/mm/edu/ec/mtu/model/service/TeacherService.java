@@ -49,4 +49,9 @@ public class TeacherService {
 	public void save(Teacher teacher) {
 		teacherRepo.save(teacher);
 	}
+
+	public Object findSubjectByTnameAndSyear(String teacher, int year) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

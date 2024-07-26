@@ -1,3 +1,4 @@
+/home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/model/service/FeedbackService.java
 /home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/controller/TeacherController.java
 /home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/controller/HomeController.java
 /home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/model/service/TeacherService.java
@@ -13,14 +14,17 @@
 /home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/config/WebSecurityConfig.java
 /home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/config/WebMvcConfig.java
 /home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/controller/StudentController.java
+/home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/model/repo/StudentYearRepo.java
 /home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/model/service/exception/BusinessException.java
 /home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/config/WebSecurityAuthenticationProvider.java
 /home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/model/repo/AcademicYearRepo.java
 /home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/controller/StudetnSignUpController.java
+/home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/model/repo/SubjectRepo.java
 /home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/model/repo/TeacherRepo.java
 /home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/controller/StaffController.java
 /home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/model/service/StudentService.java
 /home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/model/entity/Subject.java
+/home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/model/repo/FeedbackRepo.java
 /home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/model/entity/Teacher.java
 /home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/controller/FeedbackController.java
 /home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/controller/AdminController.java
@@ -31,6 +35,7 @@
 /home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/model/entity/Admin.java
 /home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/config/WebSecurityApplicationInitializer.java
 /home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/model/entity/Student.java
+/home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/model/dto/SubjectByTeacheNameAndStuYear.java
 /home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/model/entity/Feedback.java
 /home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/config/WebMvcApplicationInitializer.java
 /home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/model/entity/AcademicYear.java

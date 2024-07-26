@@ -36,6 +36,7 @@ public class WebMvcConfig implements WebMvcConfigurer{
 	ThymeleafViewResolver viewResolver(SpringTemplateEngine engine) {
 		var viewResolver = new ThymeleafViewResolver();
 		viewResolver.setTemplateEngine(engine);
+		viewResolver.setContentType("text/html");
 		return viewResolver;
 	}
 	

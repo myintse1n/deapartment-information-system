@@ -44,42 +44,433 @@
 
 	<div class="my-4 container-xxl px-5">
 
-		<h3 class="my-3" th:text="#{feedback.title}"></h3>
+		<form>
+			<div class="card mt-4 w-50">
+				<div class="card-header">
+					<div class="card-title">Student Evaluation Sheet</div>
+				</div>
+				<div class="card-body">
 
-		<p class="about-para">
-			<span class="ms-5"></span>A feedback system is a crucial component of
-			an electronic department management system, particularly in
-			educational institutions. It primarily aimed at improving the overall
-			quality of education and ensuring that the teaching methods, skills,
-			and knowledge imparted by teachers meet the standards and
-			expectations of the institution and its students.
-		</p>
+					<div class="row g-5 align-items-center mb-3">
 
-		<p class="about-para">
-			<span class="ms-5"></span>Feedback forms play a critical role in
-			measuring teacher performance by allowing students to evaluate
-			aspects such as subject knowledge, clarity in teaching, and overall
-			methodology. This information helps management identify both
-			strengths and areas needing improvement, ensuring high teaching
-			standards. Constructive feedback also enables teachers to refine
-			their methods, making their teaching more effective and better suited
-			to students' needs.
-		</p>
-		<p class="about-para">
-			<span class="ms-5"></span> Moreover, feedback helps assess teacher
-			suitability for specific subjects, ensuring they are assigned roles
-			where they can be most effective. It also promotes a culture of
-			continuous improvement, guiding professional development and
-			institutional enhancements. By valuing student input, the feedback
-			system increases engagement and satisfaction, fostering a more
-			responsive and inclusive educational environment. Therefore, it is
-			crucial for students to regularly submit feedback forms each
-			semester.
-		</p>
-		<div class="d-flex justify-content-end">
-			<a th:href="@{/feedback/form}" class="btn btn-primary "> Feedback<i
-				class="bi bi-chevron-double-right"></i>
-			</a>
+						<div class="col-3">
+							<label for="teacher" class="col-form-label">Teacher Name</label>
+						</div>
+						<div class="col-auto">
+							<input type="text" class="form-control"
+								th:value="${param.teacher}" name="teacher">
+						</div>
+
+					</div>
+
+					<div class="row g-5 align-items-center mb-3">
+
+						<div class="col-3">
+							<label for="year" class="col-form-label">Student Year</label>
+						</div>
+						<div class="col-auto">
+							<select name="year" id="year" class="form-select">
+								<option value="">Select Year</option>
+								<option th:each="year : ${years}" th:value="${year.currentYear}"
+									th:text="${year.currentYear}"
+									th:selected="${year.id} == param.year"></option>
+							</select>
+						</div>
+
+					</div>
+					<button class="btn btn-outline-success my-2 my-sm-0 float-end"
+						type="submit">Search</button>
+				</div>
+			</div>
+
+		</form>
+
+		<div class="alert alert-info mt-4"
+			th:if="${#lists.isEmpty(subject)} "
+			th:unless="${#strings.isEmpty(param.teacher)} and ${#strings.isEmpty(param.year)}">
+			Currently [[${param.teacher}]] is not teaching at [[${param.year}]]</div>
+
+		<div th:unless="${#lists.isEmpty(subject)}">
+			<div class="mt-4">
+				<table class="table">
+					<thead>
+						<tr th:each="sub : ${subject}">
+							<th th:text="${sub.name}"></th>
+							<th th:text="${sub.teacherName}"></th>
+							<th th:text="${sub.code}"></th>
+						</tr>
+					</thead>
+					<tbody>
+					<tbody>
+						<tr>
+							<td class="form-label question-font">
+								<p class="about-para">1. Does the teacher appear to be
+									well-versed in this subject area?</p>
+							</td>
+							<td>
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="checkbox"
+										id="inlineCheckbox1" value="option1"> <label
+										class="form-check-label" for="inlineCheckbox1">1</label>
+								</div>
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="checkbox"
+										id="inlineCheckbox2" value="option2"> <label
+										class="form-check-label" for="inlineCheckbox2">2</label>
+								</div>
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="checkbox"
+										id="inlineCheckbox1" value="option1"> <label
+										class="form-check-label" for="inlineCheckbox1">3</label>
+								</div>
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="checkbox"
+										id="inlineCheckbox2" value="option2"> <label
+										class="form-check-label" for="inlineCheckbox2">4</label>
+								</div>
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="checkbox"
+										id="inlineCheckbox1" value="option1"> <label
+										class="form-check-label" for="inlineCheckbox1">5</label>
+								</div>
+
+
+							</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td class="form-label question-font first-header-width">
+								<p class="about-para">2. Is the teacher enthusiastic in
+									teaching this subject?</p>
+							</td>
+							<td>
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="checkbox"
+										id="inlineCheckbox1" value="option1"> <label
+										class="form-check-label" for="inlineCheckbox1">1</label>
+								</div>
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="checkbox"
+										id="inlineCheckbox2" value="option2"> <label
+										class="form-check-label" for="inlineCheckbox2">2</label>
+								</div>
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="checkbox"
+										id="inlineCheckbox1" value="option1"> <label
+										class="form-check-label" for="inlineCheckbox1">3</label>
+								</div>
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="checkbox"
+										id="inlineCheckbox2" value="option2"> <label
+										class="form-check-label" for="inlineCheckbox2">4</label>
+								</div>
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="checkbox"
+										id="inlineCheckbox1" value="option1"> <label
+										class="form-check-label" for="inlineCheckbox1">5</label>
+								</div>
+
+
+							</td>
+							<td></td>
+						</tr>
+
+						<tr>
+							<td class="form-label question-font">
+								<p class="about-para">3. Is the teacher well prepared for
+									the class.</p>
+							</td>
+							<td>
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="checkbox"
+										id="inlineCheckbox1" value="option1"> <label
+										class="form-check-label" for="inlineCheckbox1">1</label>
+								</div>
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="checkbox"
+										id="inlineCheckbox2" value="option2"> <label
+										class="form-check-label" for="inlineCheckbox2">2</label>
+								</div>
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="checkbox"
+										id="inlineCheckbox1" value="option1"> <label
+										class="form-check-label" for="inlineCheckbox1">3</label>
+								</div>
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="checkbox"
+										id="inlineCheckbox2" value="option2"> <label
+										class="form-check-label" for="inlineCheckbox2">4</label>
+								</div>
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="checkbox"
+										id="inlineCheckbox1" value="option1"> <label
+										class="form-check-label" for="inlineCheckbox1">5</label>
+								</div>
+
+
+							</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td class="form-label question-font first-header-width">
+								<p class="about-para">4. Does the teacher explain the
+									lessons clearly?</p>
+							</td>
+							<td>
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="checkbox"
+										id="inlineCheckbox1" value="option1"> <label
+										class="form-check-label" for="inlineCheckbox1">1</label>
+								</div>
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="checkbox"
+										id="inlineCheckbox2" value="option2"> <label
+										class="form-check-label" for="inlineCheckbox2">2</label>
+								</div>
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="checkbox"
+										id="inlineCheckbox1" value="option1"> <label
+										class="form-check-label" for="inlineCheckbox1">3</label>
+								</div>
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="checkbox"
+										id="inlineCheckbox2" value="option2"> <label
+										class="form-check-label" for="inlineCheckbox2">4</label>
+								</div>
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="checkbox"
+										id="inlineCheckbox1" value="option1"> <label
+										class="form-check-label" for="inlineCheckbox1">5</label>
+								</div>
+
+
+							</td>
+							<td></td>
+						</tr>
+
+						<tr>
+							<td class="form-label question-font"><p class="about-para">
+									5.Does the teacher provide opportunities to ask for unclear
+									lectures?</p></td>
+							<td>
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="checkbox"
+										id="inlineCheckbox1" value="option1"> <label
+										class="form-check-label" for="inlineCheckbox1">1</label>
+								</div>
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="checkbox"
+										id="inlineCheckbox2" value="option2"> <label
+										class="form-check-label" for="inlineCheckbox2">2</label>
+								</div>
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="checkbox"
+										id="inlineCheckbox1" value="option1"> <label
+										class="form-check-label" for="inlineCheckbox1">3</label>
+								</div>
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="checkbox"
+										id="inlineCheckbox2" value="option2"> <label
+										class="form-check-label" for="inlineCheckbox2">4</label>
+								</div>
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="checkbox"
+										id="inlineCheckbox1" value="option1"> <label
+										class="form-check-label" for="inlineCheckbox1">5</label>
+								</div>
+
+
+							</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td class="form-label question-font first-header-width">
+								<p class="about-para">6.Does the teacher provide useful
+									feedback and good advice?</p>
+							</td>
+							<td>
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="checkbox"
+										id="inlineCheckbox1" value="option1"> <label
+										class="form-check-label" for="inlineCheckbox1">1</label>
+								</div>
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="checkbox"
+										id="inlineCheckbox2" value="option2"> <label
+										class="form-check-label" for="inlineCheckbox2">2</label>
+								</div>
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="checkbox"
+										id="inlineCheckbox1" value="option1"> <label
+										class="form-check-label" for="inlineCheckbox1">3</label>
+								</div>
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="checkbox"
+										id="inlineCheckbox2" value="option2"> <label
+										class="form-check-label" for="inlineCheckbox2">4</label>
+								</div>
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="checkbox"
+										id="inlineCheckbox1" value="option1"> <label
+										class="form-check-label" for="inlineCheckbox1">5</label>
+								</div>
+
+
+							</td>
+							<td></td>
+						</tr>
+
+						<tr>
+							<td class="form-label question-font">
+								<p class="about-para">7. Can the teacher teach this subject
+									effectiely?</p>
+							</td>
+							<td>
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="checkbox"
+										id="inlineCheckbox1" value="option1"> <label
+										class="form-check-label" for="inlineCheckbox1">1</label>
+								</div>
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="checkbox"
+										id="inlineCheckbox2" value="option2"> <label
+										class="form-check-label" for="inlineCheckbox2">2</label>
+								</div>
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="checkbox"
+										id="inlineCheckbox1" value="option1"> <label
+										class="form-check-label" for="inlineCheckbox1">3</label>
+								</div>
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="checkbox"
+										id="inlineCheckbox2" value="option2"> <label
+										class="form-check-label" for="inlineCheckbox2">4</label>
+								</div>
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="checkbox"
+										id="inlineCheckbox1" value="option1"> <label
+										class="form-check-label" for="inlineCheckbox1">5</label>
+								</div>
+
+
+							</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td class="form-label question-font first-header-width">
+								<p class="about-para">8. Does the teacher treat all students
+									fairly?</p>
+							</td>
+							<td>
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="checkbox"
+										id="inlineCheckbox1" value="option1"> <label
+										class="form-check-label" for="inlineCheckbox1">1</label>
+								</div>
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="checkbox"
+										id="inlineCheckbox2" value="option2"> <label
+										class="form-check-label" for="inlineCheckbox2">2</label>
+								</div>
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="checkbox"
+										id="inlineCheckbox1" value="option1"> <label
+										class="form-check-label" for="inlineCheckbox1">3</label>
+								</div>
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="checkbox"
+										id="inlineCheckbox2" value="option2"> <label
+										class="form-check-label" for="inlineCheckbox2">4</label>
+								</div>
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="checkbox"
+										id="inlineCheckbox1" value="option1"> <label
+										class="form-check-label" for="inlineCheckbox1">5</label>
+								</div>
+
+
+							</td>
+							<td></td>
+						</tr>
+
+						<tr>
+							<td class="form-label question-font"><p class="about-para">
+									9. Can the teacher control the class well?</p></td>
+							<td>
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="checkbox"
+										id="inlineCheckbox1" value="option1"> <label
+										class="form-check-label" for="inlineCheckbox1">1</label>
+								</div>
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="checkbox"
+										id="inlineCheckbox2" value="option2"> <label
+										class="form-check-label" for="inlineCheckbox2">2</label>
+								</div>
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="checkbox"
+										id="inlineCheckbox1" value="option1"> <label
+										class="form-check-label" for="inlineCheckbox1">3</label>
+								</div>
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="checkbox"
+										id="inlineCheckbox2" value="option2"> <label
+										class="form-check-label" for="inlineCheckbox2">4</label>
+								</div>
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="checkbox"
+										id="inlineCheckbox1" value="option1"> <label
+										class="form-check-label" for="inlineCheckbox1">5</label>
+								</div>
+
+
+							</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td class="form-label question-font first-header-width">
+								<p class="about-para">10 Does the teacher give the
+									assignment, exercise and make ?</p>
+							</td>
+							<td>
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="checkbox"
+										id="inlineCheckbox1" value="option1"> <label
+										class="form-check-label" for="inlineCheckbox1">1</label>
+								</div>
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="checkbox"
+										id="inlineCheckbox2" value="option2"> <label
+										class="form-check-label" for="inlineCheckbox2">2</label>
+								</div>
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="checkbox"
+										id="inlineCheckbox1" value="option1"> <label
+										class="form-check-label" for="inlineCheckbox1">3</label>
+								</div>
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="checkbox"
+										id="inlineCheckbox2" value="option2"> <label
+										class="form-check-label" for="inlineCheckbox2">4</label>
+								</div>
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="checkbox"
+										id="inlineCheckbox1" value="option1"> <label
+										class="form-check-label" for="inlineCheckbox1">5</label>
+								</div>
+
+
+							</td>
+							<td></td>
+						</tr>
+
+
+
+					</tbody>
+					</tbody>
+				</table>
+
+			</div>
 		</div>
 
 	</div>

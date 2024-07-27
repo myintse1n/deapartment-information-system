@@ -1,15 +1,11 @@
 package mm.edu.ec.mtu.model.entity;
 
 import java.io.Serializable;
-import java.util.List;
-
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -50,10 +46,5 @@ public class Teacher implements Serializable{
 	@Column(nullable = false)
 	private String education;
 	
-	@OneToMany(mappedBy = "teacher", cascade = CascadeType.ALL)
-	private List<Subject> subjects;
-	
-	@OneToMany(mappedBy = "teacher",cascade =CascadeType.ALL )
-	private List<Feedback> feedbacks;
 
 }

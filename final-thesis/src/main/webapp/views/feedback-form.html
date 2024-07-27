@@ -3,40 +3,7 @@
 <head>
     <title>Feedback Form</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#studentYearSelect').change(function() {
-                var yearId = $(this).val();
-                
-                // Send request only if yearId is provided
-                if (yearId) {
-                    $.get('/feedback/teachers-subjects', { yearId: yearId }, function(data) {
-                        $('#teacherSelect').empty();
-                        $('#subjectSelect').empty();
-                        
-                        // Populate teachers dropdown
-                        $.each(data.teachers, function(index, teacher) {
-                            $('#teacherSelect').append('<option value="' + teacher.id + '">' + teacher.name + '</option>');
-                        });
-                        
-                        // Populate subjects dropdown
-                        $.each(data.subjects, function(index, subject) {
-                            $('#subjectSelect').append('<option value="' + subject.id + '">' + subject.name + '</option>');
-                        });
-                    }).fail(function() {
-                        // Handle error if the request fails
-                        console.error('Error fetching data for yearId:', yearId);
-                        $('#teacherSelect').empty().append('<option value="">Select Teacher</option>');
-                        $('#subjectSelect').empty().append('<option value="">Select Subject</option>');
-                    });
-                } else {
-                    // Clear the dropdowns if no yearId is provided
-                    $('#teacherSelect').empty().append('<option value="">Select Teacher</option>');
-                    $('#subjectSelect').empty().append('<option value="">Select Subject</option>');
-                }
-            });
-        });
-    </script>
+    
 </head>
 <body>
     <form th:action="@{/feedback}" th:object="${feedback}" method="post">
@@ -58,37 +25,15 @@
             <option value="">Select Subject</option>
         </select>
 
+        <!-- Feedback Questions -->
         <label for="question1Grade">Question 1 Grade:</label>
         <input type="number" id="question1Grade" th:field="*{question1Grade}" />
 
-        <label for="question2Grade">Question 2 Grade:</label>
-        <input type="number" id="question2Grade" th:field="*{question2Grade}" />
+        <!-- Add more questions as needed -->
 
-        <label for="question3Grade">Question 3 Grade:</label>
-        <input type="number" id="question3Grade" th:field="*{question3Grade}" />
-
-        <label for="question4Grade">Question 4 Grade:</label>
-        <input type="number" id="question4Grade" th:field="*{question4Grade}" />
-
-        <label for="question5Grade">Question 5 Grade:</label>
-        <input type="number" id="question5Grade" th:field="*{question5Grade}" />
-
-        <label for="question6Grade">Question 6 Grade:</label>
-        <input type="number" id="question6Grade" th:field="*{question6Grade}" />
-
-        <label for="question7Grade">Question 7 Grade:</label>
-        <input type="number" id="question7Grade" th:field="*{question7Grade}" />
-
-        <label for="question8Grade">Question 8 Grade:</label>
-        <input type="number" id="question8Grade" th:field="*{question8Grade}" />
-
-        <label for="question9Grade">Question 9 Grade:</label>
-        <input type="number" id="question9Grade" th:field="*{question9Grade}" />
-
-        <label for="question10Grade">Question 10 Grade:</label>
-        <input type="number" id="question10Grade" th:field="*{question10Grade}" />
-        
         <button type="submit">Submit</button>
     </form>
+  
+   
 </body>
 </html>

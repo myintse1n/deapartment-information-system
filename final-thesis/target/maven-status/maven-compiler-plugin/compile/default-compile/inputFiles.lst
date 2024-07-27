@@ -29,6 +29,7 @@
 /home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/controller/FeedbackController.java
 /home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/controller/AdminController.java
 /home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/controller/ThesisController.java
+/home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/model/dto/TeacherSubjectByYear.java
 /home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/model/repo/AdminRepo.java
 /home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/model/service/security/AdminUserDetailsService.java
 /home/msseeker/git/deapartment-information-system/final-thesis/src/main/java/mm/edu/ec/mtu/model/service/ThesisService.java

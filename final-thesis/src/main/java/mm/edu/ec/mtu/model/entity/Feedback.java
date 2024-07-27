@@ -54,9 +54,6 @@ public class Feedback implements Serializable {
 	private int question10Grade;
 	
 	@ManyToOne
-	private Teacher teacher;
-		
-	@ManyToOne
 	private Student student;
 	
 	@ManyToOne

@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import mm.edu.ec.mtu.model.dto.TeacherSubjectByYear;
 import mm.edu.ec.mtu.model.entity.Feedback;
 import mm.edu.ec.mtu.model.entity.StudentYear;
 import mm.edu.ec.mtu.model.entity.Subject;
@@ -28,19 +29,24 @@ public class FeedbackService {
 
 	@Autowired
 	private SubjectRepo subjectRepository;
+	
+	public List<Teacher> getAllTeachers() {
+	    return teacherRepository.findAll();
+	}
+
+	public List<Subject> getAllSubjects() {
+	    return subjectRepository.findAll();
+	}
 
 	public List<StudentYear> getAllStudentYears() {
 		return studentYearRepository.findAll();
 	}
 
-	public List<Teacher> getTeachersByYearId(int yearId) {
-		return teacherRepository.findByYearId(yearId);
+	
+	public List<TeacherSubjectByYear> findTeacherSubjectByYearId(int yearId){
+		return subjectRepository.findByYear(yearId);
 	}
-
-	public List<Subject> getSubjectsByYearId(int yearId) {
-		return subjectRepository.findByYearId(yearId);
-	}
-
+	
 	public void saveFeedback(Feedback feedback) {
 		feedbackRepository.save(feedback);
 	}

@@ -4,50 +4,40 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import mm.edu.ec.mtu.model.dto.TeacherSubjectByYear;
 import mm.edu.ec.mtu.model.entity.Feedback;
 import mm.edu.ec.mtu.model.entity.StudentYear;
 import mm.edu.ec.mtu.model.entity.Subject;
-import mm.edu.ec.mtu.model.entity.Teacher;
 import mm.edu.ec.mtu.model.repo.FeedbackRepo;
 import mm.edu.ec.mtu.model.repo.StudentYearRepo;
 import mm.edu.ec.mtu.model.repo.SubjectRepo;
-import mm.edu.ec.mtu.model.repo.TeacherRepo;
 
 @Service
+@Transactional(readOnly = true)
 public class FeedbackService {
 
-	@Autowired
-	private FeedbackRepo feedbackRepository;
 
-	@Autowired
-	private StudentYearRepo studentYearRepository;
+    @Autowired
+    private FeedbackRepo feedbackRepository;
 
-	@Autowired
-	private TeacherRepo teacherRepository;
+    @Autowired
+    private StudentYearRepo studentYearRepository;
+    
+    @Autowired
+    private SubjectRepo subjectRepository;
+    
 
-	@Autowired
-	private SubjectRepo subjectRepository;
-	
-	public List<Teacher> getAllTeachers() {
-	    return teacherRepository.findAll();
-	}
+    public List<StudentYear> getAllStudentYears() {
+        return studentYearRepository.findAll();
+    }
 
-	public List<Subject> getAllSubjects() {
-	    return subjectRepository.findAll();
-	}
-
-	public List<StudentYear> getAllStudentYears() {
-		return studentYearRepository.findAll();
-	}
-
-	
-	public List<TeacherSubjectByYear> findTeacherSubjectByYearId(int yearId){
-		return subjectRepository.findByYear(yearId);
-	}
-	
-	public void saveFeedback(Feedback feedback) {
-		feedbackRepository.save(feedback);
-	}
+    public List<Subject> findSubjectsByTeacherIdAndYear(String teacher, Integer year) {
+        return subjectRepository.findByTeacherIdAndYearId(teacher, year);
+    }
+    
+    @Transactional
+    public void saveFeedback(Feedback feedback) {
+        feedbackRepository.save(feedback);
+    }
 }

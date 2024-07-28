@@ -71,9 +71,8 @@
 						<div class="col-auto">
 							<select name="year" id="year" class="form-select">
 								<option value="">Select Year</option>
-								<option th:each="year : ${years}" th:value="${year.currentYear}"
-									th:text="${year.currentYear}"
-									th:selected="${year.id} == param.year"></option>
+								<option th:each="year : ${years}" th:value="${year.id}"
+									th:text="${year.currentYear}" th:selected="${year.currentYear}"></option>
 							</select>
 						</div>
 
@@ -84,394 +83,233 @@
 			</div>
 
 		</form>
-
-		<div class="alert alert-info mt-4"
-			th:if="${#lists.isEmpty(subject)} "
+		<div class="alert alert-info mt-4" th:if="${#lists.isEmpty(subject)} "
 			th:unless="${#strings.isEmpty(param.teacher)} and ${#strings.isEmpty(param.year)}">
 			Currently [[${param.teacher}]] is not teaching at [[${param.year}]]</div>
 
-		<div th:unless="${#lists.isEmpty(subject)}">
-			<div class="mt-4">
-				<table class="table">
-					<thead>
-						<tr th:each="sub : ${subject}">
-							<th th:text="${sub.name}"></th>
-							<th th:text="${sub.teacherName}"></th>
-							<th th:text="${sub.code}"></th>
-						</tr>
-					</thead>
-					<tbody>
-					<tbody>
-						<tr>
-							<td class="form-label question-font">
-								<p class="about-para">1. Does the teacher appear to be
-									well-versed in this subject area?</p>
-							</td>
-							<td>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="checkbox"
-										id="inlineCheckbox1" value="option1"> <label
-										class="form-check-label" for="inlineCheckbox1">1</label>
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="checkbox"
-										id="inlineCheckbox2" value="option2"> <label
-										class="form-check-label" for="inlineCheckbox2">2</label>
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="checkbox"
-										id="inlineCheckbox1" value="option1"> <label
-										class="form-check-label" for="inlineCheckbox1">3</label>
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="checkbox"
-										id="inlineCheckbox2" value="option2"> <label
-										class="form-check-label" for="inlineCheckbox2">4</label>
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="checkbox"
-										id="inlineCheckbox1" value="option1"> <label
-										class="form-check-label" for="inlineCheckbox1">5</label>
-								</div>
+		<form th:action="@{/feedback}" th:object="${feedback}" method="post"
+			>
+			<div>
+				<div class="mt-4">
+					<table class="table">
+						<thead>
+							<tr th:each="sub : ${subject}">
+								<th th:text="${sub.name}"></th>
+								<th th:text="${sub.teacher.name}"></th>
+								<th th:text="${sub.code}"></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><select name="subject" id="subject" th:field=*{subject}>
+										<option value="">Select
+											subject</option>
+										<option th:each="subject : ${subject}"
+											th:value="${subject.id}" th:text="${subject.name}"></option>
+								</select>
+								<div th:if="${#fields.hasErrors('subject')}"
+										class="text-secondary" th:errors="*{subject}">title Error</div></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<!-- Loop for each question -->
+							<tr>
+								<td class="form-label question-font">
+									<p class="about-para">1. Does the teacher appear to be
+										well-versed in this subject area?</p>
+								</td>
+								<td>
+									<!-- Loop for each grade option (1-5) -->
+									<div th:each="grade : ${#numbers.sequence(1, 5)}"
+										class="form-check form-check-inline">
+										<input class="form-check-input" type="checkbox"
+											th:field="*{question1Grade}" th:value="${grade}"> <label
+											class="form-check-label" th:text="${grade}"></label>
+									</div>
+									<div th:if="${#fields.hasErrors('question1Grade')}"
+										class="text-secondary" th:errors="*{question1Grade}">title Error</div>
+								</td>
+								<td></td>
+							</tr>
 
+							<tr>
+								<td class="form-label question-font">
+									<p class="about-para">2. Is the teacher enthusiastic in
+										teaching this subject?</p>
+								</td>
+								<td>
+									<!-- Loop for each grade option (1-5) -->
+									<div th:each="grade : ${#numbers.sequence(1, 5)}"
+										class="form-check form-check-inline">
+										<input class="form-check-input" type="checkbox"
+											th:field="*{question2Grade}" th:value="${grade}"> <label
+											class="form-check-label" th:text="${grade}"></label>
+									</div>
+									<div th:if="${#fields.hasErrors('question2Grade')}"
+										class="text-secondary" th:errors="*{question2Grade}">title Error</div>
+								</td>
+								<td></td>
+							</tr>
 
-							</td>
-							<td></td>
-						</tr>
-						<tr>
-							<td class="form-label question-font first-header-width">
-								<p class="about-para">2. Is the teacher enthusiastic in
-									teaching this subject?</p>
-							</td>
-							<td>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="checkbox"
-										id="inlineCheckbox1" value="option1"> <label
-										class="form-check-label" for="inlineCheckbox1">1</label>
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="checkbox"
-										id="inlineCheckbox2" value="option2"> <label
-										class="form-check-label" for="inlineCheckbox2">2</label>
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="checkbox"
-										id="inlineCheckbox1" value="option1"> <label
-										class="form-check-label" for="inlineCheckbox1">3</label>
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="checkbox"
-										id="inlineCheckbox2" value="option2"> <label
-										class="form-check-label" for="inlineCheckbox2">4</label>
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="checkbox"
-										id="inlineCheckbox1" value="option1"> <label
-										class="form-check-label" for="inlineCheckbox1">5</label>
-								</div>
+							<tr>
+								<td class="form-label question-font">
+									<p class="about-para">3. Is the teacher well prepared for
+										the class.</p>
+								</td>
+								<td>
+									<!-- Loop for each grade option (1-5) -->
+									<div th:each="grade : ${#numbers.sequence(1, 5)}"
+										class="form-check form-check-inline">
+										<input class="form-check-input" type="checkbox"
+											th:field="*{question3Grade}" th:value="${grade}"> <label
+											class="form-check-label" th:text="${grade}"></label>
+									</div>
+									<div th:if="${#fields.hasErrors('question3Grade')}"
+										class="text-secondary" th:errors="*{question3Grade}">title Error</div>
+								</td>
+								<td></td>
+							</tr>
 
+							<tr>
+								<td class="form-label question-font">
+									<p class="about-para">4. Does the teacher explain the
+										lessons clearly?</p>
+								</td>
+								<td>
+									<!-- Loop for each grade option (1-5) -->
+									<div th:each="grade : ${#numbers.sequence(1, 5)}"
+										class="form-check form-check-inline">
+										<input class="form-check-input" type="checkbox"
+											th:field="*{question4Grade}" th:value="${grade}"> <label
+											class="form-check-label" th:text="${grade}"></label>
+									</div>
+									<div th:if="${#fields.hasErrors('question4Grade')}"
+										class="text-secondary" th:errors="*{question4Grade}">title Error</div>
+								</td>
+								<td></td>
+							</tr>
 
-							</td>
-							<td></td>
-						</tr>
+							<tr>
+								<td class="form-label question-font">
+									<p class="about-para">5.Does the teacher provide
+										opportunities to ask for unclear lectures?</p>
+								</td>
+								<td>
+									<!-- Loop for each grade option (1-5) -->
+									<div th:each="grade : ${#numbers.sequence(1, 5)}"
+										class="form-check form-check-inline">
+										<input class="form-check-input" type="checkbox"
+											th:field="*{question5Grade}" th:value="${grade}"> <label
+											class="form-check-label" th:text="${grade}"></label>
+									</div>
+									<div th:if="${#fields.hasErrors('question5Grade')}"
+										class="text-secondary" th:errors="*{question5Grade}">title Error</div>
+								</td>
+								<td></td>
+							</tr>
 
-						<tr>
-							<td class="form-label question-font">
-								<p class="about-para">3. Is the teacher well prepared for
-									the class.</p>
-							</td>
-							<td>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="checkbox"
-										id="inlineCheckbox1" value="option1"> <label
-										class="form-check-label" for="inlineCheckbox1">1</label>
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="checkbox"
-										id="inlineCheckbox2" value="option2"> <label
-										class="form-check-label" for="inlineCheckbox2">2</label>
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="checkbox"
-										id="inlineCheckbox1" value="option1"> <label
-										class="form-check-label" for="inlineCheckbox1">3</label>
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="checkbox"
-										id="inlineCheckbox2" value="option2"> <label
-										class="form-check-label" for="inlineCheckbox2">4</label>
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="checkbox"
-										id="inlineCheckbox1" value="option1"> <label
-										class="form-check-label" for="inlineCheckbox1">5</label>
-								</div>
+							<tr>
+								<td class="form-label question-font">
+									<p class="about-para">6.Does the teacher provide useful
+										feedback and good advice?</p>
+								</td>
+								<td>
+									<!-- Loop for each grade option (1-5) -->
+									<div th:each="grade : ${#numbers.sequence(1, 5)}"
+										class="form-check form-check-inline">
+										<input class="form-check-input" type="checkbox"
+											th:field="*{question6Grade}" th:value="${grade}"> <label
+											class="form-check-label" th:text="${grade}"></label>
+									</div>
+									<div th:if="${#fields.hasErrors('question6Grade')}"
+										class="text-secondary" th:errors="*{question6Grade}">title Error</div>
+								</td>
+								<td></td>
+							</tr>
 
+							<tr>
+								<td class="form-label question-font">
+									<p class="about-para">7. Can the teacher teach this subject
+										effectively?</p>
+								</td>
+								<td>
+									<!-- Loop for each grade option (1-5) -->
+									<div th:each="grade : ${#numbers.sequence(1, 5)}"
+										class="form-check form-check-inline">
+										<input class="form-check-input" type="checkbox"
+											th:field="*{question7Grade}" th:value="${grade}"> <label
+											class="form-check-label" th:text="${grade}"></label>
+									</div>
+									<div th:if="${#fields.hasErrors('question7Grade')}"
+										class="text-secondary" th:errors="*{question7Grade}">title Error</div>
+								</td>
+								<td></td>
+							</tr>
 
-							</td>
-							<td></td>
-						</tr>
-						<tr>
-							<td class="form-label question-font first-header-width">
-								<p class="about-para">4. Does the teacher explain the
-									lessons clearly?</p>
-							</td>
-							<td>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="checkbox"
-										id="inlineCheckbox1" value="option1"> <label
-										class="form-check-label" for="inlineCheckbox1">1</label>
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="checkbox"
-										id="inlineCheckbox2" value="option2"> <label
-										class="form-check-label" for="inlineCheckbox2">2</label>
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="checkbox"
-										id="inlineCheckbox1" value="option1"> <label
-										class="form-check-label" for="inlineCheckbox1">3</label>
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="checkbox"
-										id="inlineCheckbox2" value="option2"> <label
-										class="form-check-label" for="inlineCheckbox2">4</label>
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="checkbox"
-										id="inlineCheckbox1" value="option1"> <label
-										class="form-check-label" for="inlineCheckbox1">5</label>
-								</div>
+							<tr>
+								<td class="form-label question-font">
+									<p class="about-para">8. Does the teacher treat all
+										students fairly?</p>
+								</td>
+								<td>
+									<!-- Loop for each grade option (1-5) -->
+									<div th:each="grade : ${#numbers.sequence(1, 5)}"
+										class="form-check form-check-inline">
+										<input class="form-check-input" type="checkbox"
+											th:field="*{question8Grade}" th:value="${grade}"> <label
+											class="form-check-label" th:text="${grade}"></label>
+									</div>
+									<div th:if="${#fields.hasErrors('question8Grade')}"
+										class="text-secondary" th:errors="*{question8Grade}">title Error</div>
+								</td>
+								<td></td>
+							</tr>
 
+							<tr>
+								<td class="form-label question-font">
+									<p class="about-para">9. Can the teacher control the class
+										well?</p>
+								</td>
+								<td>
+									<!-- Loop for each grade option (1-5) -->
+									<div th:each="grade : ${#numbers.sequence(1, 5)}"
+										class="form-check form-check-inline">
+										<input class="form-check-input" type="checkbox"
+											th:field="*{question9Grade}" th:value="${grade}"> <label
+											class="form-check-label" th:text="${grade}"></label>
+									</div>
+									<div th:if="${#fields.hasErrors('question9Grade')}"
+										class="text-secondary" th:errors="*{question9Grade}">title Error</div>
+								</td>
+								<td></td>
+							</tr>
 
-							</td>
-							<td></td>
-						</tr>
-
-						<tr>
-							<td class="form-label question-font"><p class="about-para">
-									5.Does the teacher provide opportunities to ask for unclear
-									lectures?</p></td>
-							<td>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="checkbox"
-										id="inlineCheckbox1" value="option1"> <label
-										class="form-check-label" for="inlineCheckbox1">1</label>
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="checkbox"
-										id="inlineCheckbox2" value="option2"> <label
-										class="form-check-label" for="inlineCheckbox2">2</label>
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="checkbox"
-										id="inlineCheckbox1" value="option1"> <label
-										class="form-check-label" for="inlineCheckbox1">3</label>
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="checkbox"
-										id="inlineCheckbox2" value="option2"> <label
-										class="form-check-label" for="inlineCheckbox2">4</label>
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="checkbox"
-										id="inlineCheckbox1" value="option1"> <label
-										class="form-check-label" for="inlineCheckbox1">5</label>
-								</div>
-
-
-							</td>
-							<td></td>
-						</tr>
-						<tr>
-							<td class="form-label question-font first-header-width">
-								<p class="about-para">6.Does the teacher provide useful
-									feedback and good advice?</p>
-							</td>
-							<td>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="checkbox"
-										id="inlineCheckbox1" value="option1"> <label
-										class="form-check-label" for="inlineCheckbox1">1</label>
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="checkbox"
-										id="inlineCheckbox2" value="option2"> <label
-										class="form-check-label" for="inlineCheckbox2">2</label>
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="checkbox"
-										id="inlineCheckbox1" value="option1"> <label
-										class="form-check-label" for="inlineCheckbox1">3</label>
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="checkbox"
-										id="inlineCheckbox2" value="option2"> <label
-										class="form-check-label" for="inlineCheckbox2">4</label>
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="checkbox"
-										id="inlineCheckbox1" value="option1"> <label
-										class="form-check-label" for="inlineCheckbox1">5</label>
-								</div>
-
-
-							</td>
-							<td></td>
-						</tr>
-
-						<tr>
-							<td class="form-label question-font">
-								<p class="about-para">7. Can the teacher teach this subject
-									effectiely?</p>
-							</td>
-							<td>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="checkbox"
-										id="inlineCheckbox1" value="option1"> <label
-										class="form-check-label" for="inlineCheckbox1">1</label>
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="checkbox"
-										id="inlineCheckbox2" value="option2"> <label
-										class="form-check-label" for="inlineCheckbox2">2</label>
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="checkbox"
-										id="inlineCheckbox1" value="option1"> <label
-										class="form-check-label" for="inlineCheckbox1">3</label>
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="checkbox"
-										id="inlineCheckbox2" value="option2"> <label
-										class="form-check-label" for="inlineCheckbox2">4</label>
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="checkbox"
-										id="inlineCheckbox1" value="option1"> <label
-										class="form-check-label" for="inlineCheckbox1">5</label>
-								</div>
-
-
-							</td>
-							<td></td>
-						</tr>
-						<tr>
-							<td class="form-label question-font first-header-width">
-								<p class="about-para">8. Does the teacher treat all students
-									fairly?</p>
-							</td>
-							<td>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="checkbox"
-										id="inlineCheckbox1" value="option1"> <label
-										class="form-check-label" for="inlineCheckbox1">1</label>
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="checkbox"
-										id="inlineCheckbox2" value="option2"> <label
-										class="form-check-label" for="inlineCheckbox2">2</label>
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="checkbox"
-										id="inlineCheckbox1" value="option1"> <label
-										class="form-check-label" for="inlineCheckbox1">3</label>
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="checkbox"
-										id="inlineCheckbox2" value="option2"> <label
-										class="form-check-label" for="inlineCheckbox2">4</label>
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="checkbox"
-										id="inlineCheckbox1" value="option1"> <label
-										class="form-check-label" for="inlineCheckbox1">5</label>
-								</div>
-
-
-							</td>
-							<td></td>
-						</tr>
-
-						<tr>
-							<td class="form-label question-font"><p class="about-para">
-									9. Can the teacher control the class well?</p></td>
-							<td>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="checkbox"
-										id="inlineCheckbox1" value="option1"> <label
-										class="form-check-label" for="inlineCheckbox1">1</label>
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="checkbox"
-										id="inlineCheckbox2" value="option2"> <label
-										class="form-check-label" for="inlineCheckbox2">2</label>
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="checkbox"
-										id="inlineCheckbox1" value="option1"> <label
-										class="form-check-label" for="inlineCheckbox1">3</label>
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="checkbox"
-										id="inlineCheckbox2" value="option2"> <label
-										class="form-check-label" for="inlineCheckbox2">4</label>
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="checkbox"
-										id="inlineCheckbox1" value="option1"> <label
-										class="form-check-label" for="inlineCheckbox1">5</label>
-								</div>
-
-
-							</td>
-							<td></td>
-						</tr>
-						<tr>
-							<td class="form-label question-font first-header-width">
-								<p class="about-para">10 Does the teacher give the
-									assignment, exercise and make ?</p>
-							</td>
-							<td>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="checkbox"
-										id="inlineCheckbox1" value="option1"> <label
-										class="form-check-label" for="inlineCheckbox1">1</label>
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="checkbox"
-										id="inlineCheckbox2" value="option2"> <label
-										class="form-check-label" for="inlineCheckbox2">2</label>
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="checkbox"
-										id="inlineCheckbox1" value="option1"> <label
-										class="form-check-label" for="inlineCheckbox1">3</label>
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="checkbox"
-										id="inlineCheckbox2" value="option2"> <label
-										class="form-check-label" for="inlineCheckbox2">4</label>
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="checkbox"
-										id="inlineCheckbox1" value="option1"> <label
-										class="form-check-label" for="inlineCheckbox1">5</label>
-								</div>
-
-
-							</td>
-							<td></td>
-						</tr>
-
-
-
-					</tbody>
-					</tbody>
-				</table>
-
+							<tr>
+								<td class="form-label question-font">
+									<p class="about-para">10 Does the teacher give the
+										assignment, exercise and make ?</p>
+								</td>
+								<td>
+									<!-- Loop for each grade option (1-5) -->
+									<div th:each="grade : ${#numbers.sequence(1, 5)}"
+										class="form-check form-check-inline">
+										<input class="form-check-input" type="checkbox"
+											th:field="*{question10Grade}" th:value="${grade}"> <label
+											class="form-check-label" th:text="${grade}"></label>
+									</div>
+									<div th:if="${#fields.hasErrors('question10Grade')}"
+										class="text-secondary" th:errors="*{question10Grade}">title Error</div>
+								</td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
 			</div>
-		</div>
+
+			<button type="submit" class="btn btn-primary float-end mb-5">Submit
+				Feedback</button>
+		</form>
 
 	</div>
 </body>

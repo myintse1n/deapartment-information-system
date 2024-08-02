@@ -1,22 +1,22 @@
 /* Teacher */
 insert into teacher(name, position,email,phone,education) values ('Dr. Tin Tin Hla','Professor','teacher1@gmail.com','09-444-583-385','Ph.D');
 insert into teacher(name, position,email,phone,education) values ('Dr. Maung Aye','Associate Professor','teacher2@gmail.com','09-444-583-385','Ph.D');
-insert into teacher(name, position,email,phone,education) values ('Daw  Hnin Ngwe Yee Pwint','Associate Professor','teacher3@gmail.com','09-444-583-385','Ph.D');
+insert into teacher(name, position,email,phone,education) values ('Daw  Hnin Ngwe Yee Pwint','Associate Professor','teacher3@gmail.com','09-444-583-385','ME');
 insert into teacher(name, position,email,phone,education) values ('Dr. May Su Hlaing','Lecturer','teacher4@gmail.com','09-444-583-385','Ph.D');
-insert into teacher(name, position,email,phone,education) values ('Daw Khaing Zar Zar Myint','Lecturer','teacher5@gmail.com','09-444-583-385','Ph.D');
-insert into teacher(name, position,email,phone,education) values ('Daw Zin Mar','Lecturer','teacher6@gmail.com','09-444-583-385','Ph.D');
-insert into teacher(name, position,email,phone,education) values ('Daw Wai Wai Moe Myint','Lecturer','teacher7@gmail.com','09-444-583-385','Ph.D');
-insert into teacher(name, position,email,phone,education) values ('Daw Tin Tin Wai','Lecturer','teacher8@gmail.com','09-444-583-385','Ph.D');
-insert into teacher(name, position,email,phone,education) values ('Daw May Su Kyi','Associate Lecturer','teacher9@gmail.com','09-444-583-385','Ph.D');
-insert into teacher(name, position,email,phone,education) values ('Daw Thandar Aung','Associate Lecturer','teacher10@gmail.com','09-444-583-385','Ph.D');
-insert into teacher(name, position,email,phone,education) values ('U Kyaw San Shein','Coach','teacher11@gmail.com','09-444-583-385','Ph.D');
-insert into teacher(name, position,email,phone,education) values ('Daw Su Myat Hlaing','Coach','teacher12@gmail.com','09-444-583-385','Ph.D');
-insert into teacher(name, position,email,phone,education) values ('Daw Khaing Yee Mon','Coach','teacher13@gmail.com','09-444-583-385','Ph.D');
-insert into teacher(name, position,email,phone,education) values ('Daw Hsu Yadanar','Coach','teacher14@gmail.com','09-444-583-385','Ph.D');
-insert into teacher(name, position,email,phone,education) values ('Daw Nang Chan Nyein Wai','Coach','teacher15@gmail.com','09-444-583-385','Ph.D');
-insert into teacher(name, position,email,phone,education) values ('Daw Ei Mon Zaw','Coach','teacher16@gmail.com','09-444-583-385','Ph.D');
-insert into teacher(name, position,email,phone,education) values ('Daw Hsu Wai Phyo','Coach','teacher17@gmail.com','09-444-583-385','Ph.D');
-insert into teacher(name, position,email,phone,education) values ('Daw War War Moe Myint Han','Coach','teacher18@gmail.com','09-444-583-385','Ph.D');
+insert into teacher(name, position,email,phone,education) values ('Daw Khaing Zar Zar Myint','Lecturer','teacher5@gmail.com','09-444-583-385','ME');
+insert into teacher(name, position,email,phone,education) values ('Daw Zin Mar','Lecturer','teacher6@gmail.com','09-444-583-385','ME');
+insert into teacher(name, position,email,phone,education) values ('Daw Wai Wai Moe Myint','Lecturer','teacher7@gmail.com','09-444-583-385','ME');
+insert into teacher(name, position,email,phone,education) values ('Daw Tin Tin Wai','Lecturer','teacher8@gmail.com','09-444-583-385','ME');
+insert into teacher(name, position,email,phone,education) values ('Daw May Su Kyi','Associate Lecturer','teacher9@gmail.com','09-444-583-385','ME');
+insert into teacher(name, position,email,phone,education) values ('Daw Thandar Aung','Associate Lecturer','teacher10@gmail.com','09-444-583-385','BE');
+insert into teacher(name, position,email,phone,education) values ('U Kyaw San Shein','Coach','teacher11@gmail.com','09-444-583-385','BE');
+insert into teacher(name, position,email,phone,education) values ('Daw Su Myat Hlaing','Coach','teacher12@gmail.com','09-444-583-385','BE');
+insert into teacher(name, position,email,phone,education) values ('Daw Khaing Yee Mon','Coach','teacher13@gmail.com','09-444-583-385','ME');
+insert into teacher(name, position,email,phone,education) values ('Daw Hsu Yadanar','Coach','teacher14@gmail.com','09-444-583-385','ME');
+insert into teacher(name, position,email,phone,education) values ('Daw Nang Chan Nyein Wai','Coach','teacher15@gmail.com','09-444-583-385','ME');
+insert into teacher(name, position,email,phone,education) values ('Daw Ei Mon Zaw','Coach','teacher16@gmail.com','09-444-583-385','ME');
+insert into teacher(name, position,email,phone,education) values ('Daw Hsu Wai Phyo','Coach','teacher17@gmail.com','09-444-583-385','ME');
+insert into teacher(name, position,email,phone,education) values ('Daw War War Moe Myint Han','Coach','teacher18@gmail.com','09-444-583-385','ME');
 
 INSERT INTO academic_year (year) VALUES ('2018-2019')
 INSERT INTO academic_year (year) VALUES ('2019-2020')
@@ -30,7 +30,7 @@ INSERT INTO student_thesis (roll_no,name, thesis_title, academic_year_id) VALUES
 INSERT INTO student_thesis (roll_no,name, thesis_title, academic_year_id) VALUES (3,'Ma May Phyo Thu','Energy-Efficient Design for Arduino-Based Autonomous Fire Fighting Robot',6);
 INSERT INTO student_thesis (roll_no,name, thesis_title, academic_year_id) VALUES (4,'Ma May Su Htar Wai','Design and Analysis On Arduino Based Automatic Car Wash Station',6);
 INSERT INTO student_thesis (roll_no,name, thesis_title, academic_year_id) VALUES (5,'Ma Yuni San','Design and Analysis on Arduino_Based Smart Vacuum Cleaner Robot',6);
-INSERT INTO student_thesis (roll_no,name, thesis_title, academic_year_id) VALUES (6,'Ma Moe Chan Myae Khin','Design and Implementation of Arduino_Based Autonomous Obstacle Avoiding Robot',6);
+INSERT INTO student_thesis (roll_no,name, thesis_title, academic_year_id) VALUES (6,'Ma Moe Chan Myae Khin','Design and Implementation of Arduino_Based Autonomous Obstacle Avoiding and Edge Detection Robot',6);
 INSERT INTO student_thesis (roll_no,name, thesis_title, academic_year_id) VALUES (7,'Ma Nan Cherry Htun','Smart Kitchen Automation and Grocery Management System Using GSM Module',6);
 INSERT INTO student_thesis (roll_no,name, thesis_title, academic_year_id) VALUES (8,'Ma Shun Lae Oo','GSM Based Anti-Theft System for Home Security Using Arduino',6);
 INSERT INTO student_thesis (roll_no,name, thesis_title, academic_year_id) VALUES (9,'Ma Aye Thu Zar Aung','IoI Based Web_Controlled Surveillance Robotic Car Using Arduino',6);

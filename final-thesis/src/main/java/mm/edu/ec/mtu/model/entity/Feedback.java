@@ -1,6 +1,7 @@
 package mm.edu.ec.mtu.model.entity;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -9,6 +10,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Digits;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
@@ -22,47 +24,57 @@ public class Feedback implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private Long id;
 	
 	@NotNull
-	@Column(nullable = false,name = "question1_grade")
-	private int question1Grade;
+	@Digits(integer = 3,fraction = 2)
+	@Column(nullable = false,name = "Q1")
+	private BigDecimal question1Grade;
 	
 	@NotNull
-	@Column(nullable = false,name = "question2_grade")
-	private int question2Grade;
+	@Digits(integer = 3,fraction = 2)
+	@Column(nullable = false,name = "Q2")
+	private BigDecimal question2Grade;
 	
 	@NotNull(message = "choost one")
-	@Column(nullable = false,name = "question3_grade")
-	private int question3Grade;
+	@Digits(integer = 3,fraction = 2)
+	@Column(nullable = false,name = "Q3")
+	private BigDecimal question3Grade;
 	
 	@NotNull(message = "choost one")
-	@Column(nullable = false,name = "question4_grade")
-	private int question4Grade;
+	@Digits(integer = 3,fraction = 2)
+	@Column(nullable = false,name = "Q4")
+	private BigDecimal question4Grade;
 	
 	@NotNull
-	@Column(nullable = false,name = "question5_grade")
-	private int question5Grade;
+	@Digits(integer = 3,fraction = 2)
+	@Column(nullable = false,name = "Q5")
+	private BigDecimal question5Grade;
 	
 	@NotNull(message = "choost one")
-	@Column(nullable = false,name = "question6_grade")
-	private int question6Grade;
+	@Digits(integer = 3,fraction = 2)
+	@Column(nullable = false,name = "Q6")
+	private BigDecimal question6Grade;
 	
 	@NotNull(message = "choost one")
-	@Column(nullable = false,name = "question7_grade")
-	private int question7Grade;
+	@Digits(integer = 3,fraction = 2)
+	@Column(nullable = false,name = "Q7")
+	private BigDecimal question7Grade;
 	
 	@NotNull(message = "choost one")
-	@Column(nullable = false,name = "question8_grade")
-	private int question8Grade;
+	@Digits(integer = 3,fraction = 2)
+	@Column(nullable = false,name = "Q8")
+	private BigDecimal question8Grade;
 	
 	@NotNull(message = "choost one")
-	@Column(nullable = false,name = "question9_grade")
-	private int question9Grade;
+	@Digits(integer = 3,fraction = 2)
+	@Column(nullable = false,name = "Q9")
+	private BigDecimal question9Grade;
 	
 	@NotNull(message = "choost one")
-	@Column(nullable = false,name = "question10_grade")
-	private int question10Grade;
+	@Digits(integer = 3,fraction = 2)
+	@Column(nullable = false,name = "Q10")
+	private BigDecimal question10Grade;
 	
 	@NotNull(message = "choost one")
 	@ManyToOne

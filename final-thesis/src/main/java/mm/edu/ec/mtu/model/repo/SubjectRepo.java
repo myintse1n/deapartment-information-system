@@ -11,5 +11,6 @@ public interface SubjectRepo extends JpaRepositoryImplementation<Subject, Intege
 
 	@Query("SELECT s FROM Subject s WHERE s.teacher.name = ?1 AND s.year.id = ?2")
 	List<Subject> findByTeacherIdAndYearId(String teacher, Integer year);
-
+	
+	List<Subject> findByTeacherId(int id);
 }

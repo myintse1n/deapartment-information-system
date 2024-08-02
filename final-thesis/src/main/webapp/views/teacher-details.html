@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://kit.fontawesome.com/f0b4d212f8.js"
+	crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/0dc3600b72.js"
+	crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet"
+	th:href="@{/resources/vendors/css/bootstrap.min.css}" />
+<script th:src="@{/resources/vendors/js/bootstrap.bundle.min.js}"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+<script th:src="@{/resources/js/menu-bar-navigation-link.js}"></script>
+<link rel="stylesheet" type="text/css"
+	th:href="@{/resources/css/home.css}" />
+
+
+<link rel="apple-touch-icon" sizes="180x180"
+	th:href="@{/resources//vendors/favicon/android-chrome-192x192.png}">
+<link rel="apple-touch-icon" sizes="180x180"
+	th:href="@{/resources/vendors/favicon/android-chrome-512x512.png}">
+<link rel="apple-touch-icon" sizes="180x180"
+	th:href="@{/resources/vendors/favicon/apple-touch-icon.png}">
+<link rel="icon" type="image/png" sizes="32x32"
+	th:href="@{/resources/vendors/favicon/favicon-32x32.png}">
+<link rel="icon" type="image/png" sizes="16x16"
+	th:href="@{/resources/vendors/favicon/favicon-16x16.png}">
+<link rel="manifest"
+	th:href="@{resources/vendors/favicon/site.webmanifest}">
+
+<title>teacher details</title>
+</head>
+<body>
+	<div class="my-4 container px-5">
+		<div class="card w-75">
+			<div class="card-header">
+				<div class="card-title">Hello</div>
+			</div>
+			<div class="card-body">
+				<div th:each="teache : ${teacher}" th:object="${teache}">
+					<div class="row mb-3">
+						<div class="col-md-4">
+							<label class="form-label">Name</label>
+						</div>
+						<div class="col-md-8">
+							<input type="text" class="form-control" th:value="*{name}"
+								readonly="readonly" />
+						</div>
+					</div>
+					<div class="row mb-3">
+						<div class="col-md-4">
+							<label class="form-label">Education</label>
+						</div>
+						<div class="col-md-8">
+							<input type="text" class="form-control" th:value="*{education}"
+								readonly="readonly" />
+						</div>
+					</div>
+					<div class="row mb-3">
+						<div class="col-md-4">
+							<label class="form-label">Phone</label>
+						</div>
+						<div class="col-md-8">
+							<input type="text" class="form-control" th:value="*{phone}"
+								readonly="readonly" />
+						</div>
+					</div>
+					<div class="row mb-3">
+						<div class="col-md-4">
+							<label class="form-label">Email</label>
+						</div>
+						<div class="col-md-8">
+							<input type="text" class="form-control" th:value="*{email}"
+								readonly="readonly" />
+						</div>
+					</div>
+				</div>
+
+				<table class="table  table-borderless" th:unless="${#lists.isEmpty(feedbackResults)}">
+					<thead>
+						<tr>
+							<th>Subject</th>
+							<th>Average Feedback Results</th>
+							<th>Feedback Counts</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="result : ${feedbackResults}" th:object="${result}">
+							<td th:text="*{subjectName}"></td>
+							<td th:text="*{avgFeedback}"></td>
+							<td th:text="*{count}"></td>
+						</tr>
+					</tbody>
+				</table>
+
+			</div>
+		</div>
+	</div>
+</body>
+</html>

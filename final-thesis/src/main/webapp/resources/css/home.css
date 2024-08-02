@@ -4,7 +4,7 @@
 	box-sizing: border-box;
 }
 
-border{
+border {
 	font-size: 16px;
 	line-height: 1.5;
 }
@@ -14,18 +14,18 @@ border{
 	width: 100px;
 	height: 100px;
 }
+
 .social-link {
-	width:20px;
-	height:20px;
-	margin:5px;
+	width: 20px;
+	height: 20px;
+	margin: 5px;
 }
 
 .social-media {
-	position:absolute;
-	top:10px;
-	right:32px;
+	position: absolute;
+	top: 10px;
+	right: 32px;
 }
-
 
 /**** CUSTOM MENU ****/
 .custom-menu-bar {
@@ -129,7 +129,7 @@ border{
 
 .ec-depart img {
 	width: 90%;
-	height:375px;
+	height: 375px;
 }
 
 .diagonal-border-radius {
@@ -248,4 +248,83 @@ to {
 
 .btn-rectangular--white:hover {
 	border-bottom: 1px solid transparent;
+}
+
+/*********** FOOTER ***********/
+
+footer {
+	background-color:#333;
+	padding:50px;
+	font-size:80%;
+	color:#888;
+}
+
+.footer-nav {
+	float:left;
+}
+
+.social-links {
+	float:right;
+}
+
+.footer-nav li{
+	list-style:none;
+	display:inline-block;
+	margin-right:20px;
+}
+
+.footer-nav li a:link,
+.footer-nav li a:visited,
+.social-links li a:link,
+.social-links li a:visited {
+	color:#888;
+	text-decoration: none;
+	-webkit-transition:color 0.2s;
+	transition:color 0.2s;
+}
+
+.footer-nav li a:hover,
+.footer-nav li a:active {
+	color:#fff;
+}
+
+.social-links li {
+	list-style:none;
+	display:inline-block;
+	margin-left:20px;
+}
+
+.social-links li a:link,
+.social-links li a:visited {
+	font-size: 160%;
+}
+
+.fa-facebook-f,
+.fa-twitter,
+.fa-google-plus-g,
+.fa-instagram {
+	-webkit-transition:color 0.2s;
+	transition:color 0.2s;
+}
+
+.fa-facebook-f:hover {
+	color:#3b5998;
+}
+
+.fa-twitter:hover {
+	color:#00aced;
+}
+
+.fa-google-plus-g:hover {
+	color:#dd4b39;
+}
+
+.fa-instagram:hover {
+	color:#517fa4;
+}
+
+footer p {
+	text-align:center;
+	margin-top:50px;
+	line-height:1.5;
 }

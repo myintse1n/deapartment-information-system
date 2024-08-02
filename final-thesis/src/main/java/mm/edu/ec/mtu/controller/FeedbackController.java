@@ -22,29 +22,30 @@ public class FeedbackController {
 	private FeedbackService feedbackService;
 
 	@GetMapping
-	String feedback(
-			@RequestParam(required = false) String teacher, 
-			@RequestParam(required = false) Integer year,
-			ModelMap model
-			) {
-		
+	String feedback(@RequestParam(required = false) String teacher, @RequestParam(required = false) Integer year,
+			ModelMap model) {
+
 		var subject = feedbackService.findSubjectsByTeacherIdAndYear(teacher, year);
-		model.put("subject",subject);
-		
-		return "feedback2";
+		model.put("subject", subject);
+		return "feedback";
 	}
-	
+
+	@GetMapping("success")
+	String feedbackSuccess() {
+		return "feedback-success";
+	}
+
 	@PostMapping
-	String saveFeedback( @ModelAttribute("feedback") @Validated Feedback feedback,
-		
-			BindingResult result) {
-		if(result.hasErrors()) {
-			return "feedback2";
+	String saveFeedback(@ModelAttribute("feedback") @Validated Feedback feedback, BindingResult result,
+			@RequestParam(required = false) String teacher, @RequestParam(required = false) Integer year,
+			ModelMap model) {
+		if (result.hasErrors()) {
+			return "feedback";
 		}
 		feedbackService.saveFeedback(feedback);
-		return "home";
+		return "redirect:/feedback/success";
 	}
-	
+
 	@ModelAttribute("feedback")
 	Feedback getFeedback(ModelMap model) {
 		var studentYears = feedbackService.getAllStudentYears();

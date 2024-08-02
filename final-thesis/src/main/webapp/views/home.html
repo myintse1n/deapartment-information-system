@@ -4,7 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="https://kit.fontawesome.com/f0b4d212f8.js"
-	crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/0dc3600b72.js"
+	crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/0dc3600b72.js"
 	crossorigin="anonymous"></script>
 
 
@@ -13,8 +14,9 @@
 <script th:src="@{/resources/vendors/js/bootstrap.bundle.min.js}"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 
+<script th:src="@{/resources/js/menu-bar-navigation-link.js}"></script>
 <link rel="stylesheet" type="text/css"
-	th:href="@{resources/css/home.css}">
+	th:href="@{/resources/css/home.css}" />
 
 
 <link rel="apple-touch-icon" sizes="180x180"
@@ -152,7 +154,7 @@
 	</div>
 
 	<!-- STUDENT INFORMATION -->
-	<div id="thesis" class="my-4 container-xxl px-5">
+	<div id="theses" class="my-4 container-xxl px-5">
 		<h3 class="text-center">Student Thesis Information</h3>
 		<div class="row mt-3">
 			<div class="col-5">
@@ -168,7 +170,7 @@
 					academic and professional communities.</p>
 				<p class="about-para">
 					We collect details about thesis titles of other graduated students.
-					You can reference <a th:href="@{/theses}">here</a>.
+					You can reference <a th:href="@{/theses}" class="text-warning">here</a>.
 				</p>
 			</div>
 
@@ -190,7 +192,7 @@
 	</div>
 
 	<!-- Student Feedback  -->
-	<div class="my-4 container-xxl px-5">
+	<div id="feedback" class="my-4 container-xxl px-5">
 
 		<h3 class="my-3 text-center" th:text="#{feedback.title}"></h3>
 
@@ -204,16 +206,6 @@
 		</p>
 
 		<p class="about-para">
-			<span class="ms-5"></span>Feedback forms play a critical role in
-			measuring teacher performance by allowing students to evaluate
-			aspects such as subject knowledge, clarity in teaching, and overall
-			methodology. This information helps management identify both
-			strengths and areas needing improvement, ensuring high teaching
-			standards. Constructive feedback also enables teachers to refine
-			their methods, making their teaching more effective and better suited
-			to students' needs.
-		</p>
-		<p class="about-para">
 			<span class="ms-5"></span> Moreover, feedback helps assess teacher
 			suitability for specific subjects, ensuring they are assigned roles
 			where they can be most effective. It also promotes a culture of
@@ -222,14 +214,40 @@
 			system increases engagement and satisfaction, fostering a more
 			responsive and inclusive educational environment. Therefore, it is
 			crucial for students to regularly submit feedback forms each
-			semester.
+			semester.You can submit feedback from <a th:href="@{/feedback}"
+				class="text-danger"> here.</a>
 		</p>
-		<div class="d-flex justify-content-end">
-			<a th:href="@{/feedback}" class="btn btn-primary "> Feedback<i
-				class="bi bi-chevron-double-right"></i>
-			</a>
-		</div>
+		<div class="d-flex justify-content-end"></div>
 	</div>
+	<footer id="footer">
+		<div class="row">
+			<div class="col">
+				<ul class="footer-nav">
+					<li><a href="#">About Us</a></li>
+					<li><a href="#">Blog</a></li>
+					<li><a href="#">Help &amp; Support</a></li>
+					<li><a href="#">Contact</a></li>
+					<li><a href="#"></a></li>
+				</ul>
+			</div>
+			<div class="col">
+				<ul class="social-links">
+					<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+					<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+					<li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+					<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="row">
+			<p>
+				This webpage has been created for educational purposes for
+				Electronic Engineering Department at Mandalay Technological
+				University<br> You can feel free to use it and customize it to
+				make your own webpages
+			</p>
+		</div>
+	</footer>
 
 </body>
 </html>

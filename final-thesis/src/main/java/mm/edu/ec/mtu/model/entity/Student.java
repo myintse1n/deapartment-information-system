@@ -1,15 +1,9 @@
 package mm.edu.ec.mtu.model.entity;
 
 import java.io.Serializable;
-import java.util.List;
-
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
-import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Data;
 
@@ -29,8 +23,4 @@ public class Student implements Serializable{
 	private String password;
 	
 	private String role;
-	
-	@ElementCollection
-	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
-	private List<Feedback> feedbacks;
 }

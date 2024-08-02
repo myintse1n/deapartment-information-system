@@ -7,12 +7,10 @@
 	crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/0dc3600b72.js"
 	crossorigin="anonymous"></script>
-
-
 <link rel="stylesheet"
 	th:href="@{/resources/vendors/css/bootstrap.min.css}" />
 <script th:src="@{/resources/vendors/js/bootstrap.bundle.min.js}"></script>
-
+<script th:src="@{/resources/js/menu-bar-navigation-link.js}"></script>
 <link rel="stylesheet" type="text/css"
 	th:href="@{resources/css/home.css}">
 
@@ -37,7 +35,6 @@
 
 .form-search {
 	display: flex;
-	
 	margin-right: 32px;
 }
 </style>
@@ -56,11 +53,10 @@
 
 		<div class="my-4 teacher-search column-gap-3">
 			<a th:href="@{/teachers/edit}" class="btn btn-primary">Add
-				Teacher</a> <a th:href="@{/teachers/edit}" class="btn btn-danger">Remove
 				Teacher</a>
 
 			<form class="form-search column-gap-2">
-				<input class="form-control mr-sm-2" type="search" name="keyword"
+				<input class="form-control mr-sm-2" type="search" name="keyword" th:value="${param.keyword}"
 					placeholder="Search" aria-label="Search">
 				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 			</form>
@@ -68,13 +64,13 @@
 		<table class="table table-striped mt-4">
 			<thead>
 				<tr>
-					<th>Id</th>
+					<th>No</th>
 					<th>Name</th>
 					<th>Position</th>
 					<th>Email</th>
 					<th>Phone No</th>
 					<th>Education</th>
-					<th>Image</th>
+					<th>action</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -86,7 +82,8 @@
 					<td th:text="*{email}"></td>
 					<td th:text="*{phone}"></td>
 					<td th:text="*{education}"></td>
-					<td th:text="*{image}"></td>
+					<td><a th:href="@{/teachers/details(id=*{id})}"><i
+							class="fa-solid fa-circle-info" style="color: #1a5fb4;"></i></a></td>
 				</tr>
 			</tbody>
 		</table>

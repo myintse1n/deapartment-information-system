@@ -33,7 +33,17 @@ public class TeacherController {
 	String teacherEdit() {
 		return "teacher-edit";
 	}
-
+	
+	@GetMapping("details")
+	String teacherDeatils(
+			@RequestParam(required = false) int id,
+			ModelMap model) {
+		var teacher = service.getTeachers(id);
+		model.put("teacher", teacher);
+		model.put("feedbackResults", service.getFeedbackResults(id));
+		return "teacher-details";
+	}
+	
 	@PostMapping
 	String save(@ModelAttribute("teacher") @Validated Teacher teacher, BindingResult result) {
 		if (result.hasErrors()) {

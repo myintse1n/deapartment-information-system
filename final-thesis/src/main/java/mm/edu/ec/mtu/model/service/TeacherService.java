@@ -10,7 +10,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
+import mm.edu.ec.mtu.model.dto.FeedbackResults;
 import mm.edu.ec.mtu.model.entity.Teacher;
+import mm.edu.ec.mtu.model.repo.FeedbackRepo;
 import mm.edu.ec.mtu.model.repo.TeacherRepo;
 
 @Service
@@ -19,6 +21,9 @@ public class TeacherService {
 
 	@Autowired
 	private TeacherRepo teacherRepo;
+	@Autowired
+	private FeedbackRepo feedbackRepo;
+	
 
 	public List<Teacher> search(String keyword) {
 		
@@ -42,16 +47,21 @@ public class TeacherService {
 	}
 
 	public Optional<Teacher> getTeacherById(Integer id) {
-		return Optional.ofNullable(teacherRepo.findById(id)).orElseThrow();
+		return Optional.ofNullable(teacherRepo.findById(id)).orElse(null);
+	}
+	
+	public Teacher getTeachers(int id) {
+		return teacherRepo.findById(id).orElse(null);
 	}
 
+	public List<FeedbackResults> getFeedbackResults(int id){
+		return feedbackRepo.getFeedbackResults(id);
+	}
+	
+	
 	@Transactional
 	public void save(Teacher teacher) {
 		teacherRepo.save(teacher);
 	}
 
-	public Object findSubjectByTnameAndSyear(String teacher, int year) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }

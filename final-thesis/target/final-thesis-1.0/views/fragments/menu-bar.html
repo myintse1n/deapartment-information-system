@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://kit.fontawesome.com/0dc3600b72.js"
+	crossorigin="anonymous"></script>
+</head>
+<body>
+	<!-- Custom Menu Bar -->
+	<div class="sticky-top" id="custom-menu">
+		<div class="custom-menu-bar mb-3">
+			<div class="custom-left-menu">
+				<a th:href="@{/}">Home</a>
+				<!-- Custom Department dropdown -->
+				<div class="custom-dropdown">
+					<button class="custom-dropbtn">
+						Department <i class="fa-solid fa-angle-down"></i>
+					</button>
+					<div class="custom-dropdown-content">
+						<a href="#vision-mission" class="nav-link" data-href="/">Vision
+							&amp; Missions</a> <a href="#professors" class="nav-link"
+							data-href="/">Our Professors</a> <a href="#theses"
+							class="nav-link">Thesis Title by Academic Year</a> <a
+							href="#feedback" class="nav-link">Student Feedback</a>
+					</div>
+				</div>
+				<a href="#" class="nav-link">Admissions</a> <a href="#"
+					class="nav-link">News &amp; Events</a>
+			</div>
+			<!-- Custom Right-side menu items -->
+			<div class="custom-right-menu">
+				<a href="#footer" class="nav-link">Contact Us</a><a href="#footer"
+					class="nav-link">About</a>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

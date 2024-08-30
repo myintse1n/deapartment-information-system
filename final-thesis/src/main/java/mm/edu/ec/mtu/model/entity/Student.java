@@ -22,5 +22,5 @@ public class Student implements Serializable{
 	@Column(nullable = false)
 	private String password;
 	
-	private String role;
+	private String role="Student";
 }

@@ -1,0 +1,50 @@
+.ec-logo-login {
+	width: 100px;
+	height: 100px;
+	margin-top: 20px;
+}
+
+.login-icon {
+	float: left;
+	margin-right: 20px;
+}
+
+.login-info {
+	border: 1px solid #3578e5;
+	border-radius: 3px;
+	overflow: hidden;
+	width: 50%;
+	margin: 30px auto;
+	padding : 8px;
+}
+
+form {
+	background-color: #f0f0f0;
+	justify-content: center;
+	align-items: center;
+	margin: 0px auto;
+}
+
+.login-container {
+	background-color: #fff;
+	padding: 20px;
+	margin-top: 40px;
+	border: 2px solid #bbc4bb;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	width: 200px;
+}
+
+button {
+	width: 100%;
+	padding: 10px;
+	background-color: #007BFF;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+button:hover {
+	background-color: #0056b3;
+}

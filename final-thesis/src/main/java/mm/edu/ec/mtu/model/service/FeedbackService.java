@@ -29,7 +29,7 @@ public class FeedbackService {
     
 
     public List<StudentYear> getAllStudentYears() {
-        return studentYearRepository.findAll();
+        return studentYearRepository.findAllByOrderById();
     }
 
     public List<Subject> findSubjectsByTeacherIdAndYear(String teacher, Integer year) {

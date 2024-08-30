@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
-<head xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head >
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Student Thesis Information</title>
@@ -26,17 +26,18 @@
 				<button class="navigation" name="year" th:value="${nextYear}">&gt;</button>
 			</form>
 		</div>
-		<table id="student-table">
+		<div class="alert alert-info" th:unless="${theses}">During Covid-19 , Universities in Myanmar are closed from April 2019 to December 2021</div>
+		<table th:if="${theses}" id="student-table">
 			<thead>
 				<tr>
-					<th>Student ID</th>
+					<th>No</th>
 					<th>Name</th>
 					<th>Thesis Title</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr th:each="thesis : ${theses}">
-					<td th:text="${thesis.studentId}">1</td>
+					<td th:text="${thesis.rollNo}">1</td>
 					<td th:text="${thesis.name}">John Doe</td>
 					<td th:text="${thesis.thesisTitle}">The Impact of Renewable
 						Energy on Climate Change</td>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://kit.fontawesome.com/f0b4d212f8.js"
+	crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/0dc3600b72.js"
+	crossorigin="anonymous"></script>
+<link rel="stylesheet"
+	th:href="@{/resources/vendors/css/bootstrap.min.css}" />
+<script th:src="@{/resources/vendors/js/bootstrap.bundle.min.js}"></script>
+<script th:src="@{/resources/js/menu-bar-navigation-link.js}"></script>
+<link rel="stylesheet" type="text/css"
+	th:href="@{resources/css/home.css}">
+
+<link rel="apple-touch-icon" sizes="180x180"
+	th:href="@{/resources//vendors/favicon/android-chrome-192x192.png}">
+<link rel="apple-touch-icon" sizes="180x180"
+	th:href="@{/resources/vendors/favicon/android-chrome-512x512.png}">
+<link rel="apple-touch-icon" sizes="180x180"
+	th:href="@{/resources/vendors/favicon/apple-touch-icon.png}">
+<link rel="icon" type="image/png" sizes="32x32"
+	th:href="@{/resources/vendors/favicon/favicon-32x32.png}">
+<link rel="icon" type="image/png" sizes="16x16"
+	th:href="@{/resources/vendors/favicon/favicon-16x16.png}">
+<link rel="manifest"
+	th:href="@{resources/vendors/favicon/site.webmanifest}">
+
+
+<style>
+.teacher-search {
+	display: flex;
+}
+
+.form-search {
+	display: flex;
+	margin-right: 32px;
+}
+</style>
+
+<title>Teachers At EC Department</title>
+</head>
+<body>
+	<!-- EC-LOGO -->
+	<div th:replace="~{fragments/ec-logo :: #ec-logo}"></div>
+	<!-- CUSTOM MENU -->
+	<div th:replace="~{fragments/menu-bar :: #custom-menu}"></div>
+
+	<div class="my-4 container-xxl px-5">
+
+		<h3>Electronic Engineering Department Teachers</h3>
+
+		<div class="my-4 teacher-search column-gap-3">
+			<a th:href="@{/teachers/edit}" class="btn btn-primary">Add
+				Teacher</a>
+
+			<form class="form-search column-gap-2">
+				<input class="form-control mr-sm-2" type="search" name="keyword" th:value="${param.keyword}"
+					placeholder="Search" aria-label="Search">
+				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+			</form>
+		</div>
+		<table class="table table-striped mt-4">
+			<thead>
+				<tr>
+					<th>No</th>
+					<th>Name</th>
+					<th>Position</th>
+					<th>Email</th>
+					<th>Phone No</th>
+					<th>Education</th>
+					<th>action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="teache : ${teacherList}" th:object="${teache}">
+					<td th:text="*{id}"></td>
+					<td><a th:href="@{/teachers/edit(id=*{id})}"
+						class="text-decoration-none" th:text="*{name}"></a></td>
+					<td th:text="*{position}"></td>
+					<td th:text="*{email}"></td>
+					<td th:text="*{phone}"></td>
+					<td th:text="*{education}"></td>
+					<td><a th:href="@{/teachers/details(id=*{id})}"><i
+							class="fa-solid fa-circle-info" style="color: #1a5fb4;"></i></a></td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+
+
+</body>
+</html>
